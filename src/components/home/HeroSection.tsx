@@ -3,9 +3,9 @@ import { ChevronRight, Trophy, Users, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const stats = [
-  { icon: Trophy, value: "15+", label: "Campeonatos" },
-  { icon: Users, value: "25+", label: "Jogadores" },
-  { icon: Target, value: "2", label: "Divisões" },
+  { icon: Trophy, value: "5+", label: "Campeonatos" },
+  { icon: Users, value: "30+", label: "Jogadores" },
+  { icon: Target, value: "2", label: "Rosters" },
 ];
 
 export const HeroSection = () => {
@@ -22,33 +22,28 @@ export const HeroSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full mb-8 animate-slide-up">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             <span className="font-body text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              A Nova Era do Esports
+              O Próximo Nível do E-sports
             </span>
           </div>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-6 animate-slide-up" style={{ animationDelay: "0.1s" }}>
-            DOMINANDO
+            PRECISÃO.
             <br />
-            <span className="gradient-text">OS CAMPOS</span>
+            <span className="gradient-text">FOCO.</span>
             <br />
-            DE BATALHA
+            RESULTADO.
           </h1>
 
           <p className="font-body text-xl md:text-2xl text-muted-foreground max-w-2xl mb-10 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            Somos a NexusGG, uma organização de esports portuguesa com equipes 
+            Somos a WayGaming, uma organização de esports com equipes 
             de elite em League of Legends e Valorant.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-slide-up" style={{ animationDelay: "0.3s" }}>
             <Button variant="hero" size="xl" asChild>
               <Link to="/about">
-                Conhecer a Org
+                Conheça a Org
                 <ChevronRight className="w-5 h-5" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="xl" asChild>
-              <Link to="/league-of-legends">
-                Ver Equipas
               </Link>
             </Button>
           </div>

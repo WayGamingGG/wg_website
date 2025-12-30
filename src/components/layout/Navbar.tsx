@@ -1,21 +1,36 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Gamepad2 } from "lucide-react";
+import { Menu, X, Gamepad2, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CartDrawer } from "@/components/store/CartDrawer";
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+const esportsLinks = [
+  { name: "League of Legends", path: "/league-of-legends" },
+  { name: "Valorant", path: "/valorant" },
+];
+
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
-  { name: "League of Legends", path: "/league-of-legends" },
-  { name: "Valorant", path: "/valorant" },
-  { name: "Loja", path: "/store" },
+  { name: "Streamers", path: "/streamers" },
+  { name: "Equipa", path: "/staff" },
+  { name: "Carreiras", path: "/careers" },
+  { name: "Contactos", path: "/contact" },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [esportsOpen, setEsportsOpen] = useState(false);
   const location = useLocation();
+  const isEsportsActive = esportsLinks.some(link => location.pathname === link.path);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
@@ -23,17 +38,84 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center box-glow group-hover:box-glow-strong transition-all duration-300">
-              <Gamepad2 className="w-7 h-7 text-primary-foreground" />
-            </div>
+            <img
+              src="./public/WG.png"
+              className="
+                w-20 h-20
+                box-glow
+                group-hover:box-glow-strong
+                transition-all duration-300
+              "
+            />
             <span className="font-display text-2xl font-bold text-foreground">
-              NEXUS<span className="text-primary">GG</span>
+              WAY<span className="text-primary">GAMING</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
+            {/* Home Link */}
+            <Link
+              to="/"
+              className={cn(
+                "px-4 py-2 font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-md",
+                location.pathname === "/"
+                  ? "text-primary text-glow"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+              )}
+            >
+              Home
+            </Link>
+
+            {/* About Link */}
+            <Link
+              to="/about"
+              className={cn(
+                "px-4 py-2 font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-md",
+                location.pathname === "/about"
+                  ? "text-primary text-glow"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+              )}
+            >
+              About
+            </Link>
+
+            {/* E-Sports Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className={cn(
+                    "flex items-center gap-1 px-4 py-2 font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-md",
+                    isEsportsActive
+                      ? "text-primary text-glow"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                  )}
+                >
+                  E-Sports
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="bg-card border border-border z-50">
+                {esportsLinks.map((link) => (
+                  <DropdownMenuItem key={link.path} asChild>
+                    <Link
+                      to={link.path}
+                      className={cn(
+                        "w-full px-4 py-2 font-body text-sm font-semibold uppercase tracking-wider cursor-pointer",
+                        location.pathname === link.path
+                          ? "text-primary"
+                          : "text-foreground hover:text-primary"
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Other Nav Links */}
+            {navLinks.slice(2).map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -50,16 +132,16 @@ export const Navbar = () => {
           </div>
 
           {/* CTA Button & Cart */}
-          <div className="hidden md:flex items-center gap-3">
+          {/* <div className="hidden md:flex items-center gap-3">
             <CartDrawer />
             <Button variant="outline" size="sm">
               Join Us
             </Button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-3">
-            <CartDrawer />
+            {/* <CartDrawer /> */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-foreground"
@@ -72,7 +154,60 @@ export const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 border-t border-border animate-slide-up">
-            {navLinks.map((link) => (
+            <Link
+              to="/"
+              onClick={() => setIsOpen(false)}
+              className={cn(
+                "block px-4 py-3 font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300",
+                location.pathname === "/"
+                  ? "text-primary bg-secondary"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+              )}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setIsOpen(false)}
+              className={cn(
+                "block px-4 py-3 font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300",
+                location.pathname === "/about"
+                  ? "text-primary bg-secondary"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+              )}
+            >
+              About
+            </Link>
+            
+            {/* Mobile E-Sports Section */}
+            <button
+              onClick={() => setEsportsOpen(!esportsOpen)}
+              className="w-full flex items-center justify-between px-4 py-3 font-body text-sm font-semibold uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-secondary"
+            >
+              E-Sports
+              <ChevronDown className={cn("w-4 h-4 transition-transform", esportsOpen && "rotate-180")} />
+            </button>
+            {esportsOpen && (
+              <div className="bg-secondary/50">
+                {esportsLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "block px-8 py-3 font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300",
+                      location.pathname === link.path
+                        ? "text-primary"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            {navLinks.slice(2).map((link) => (
               <Link
                 key={link.path}
                 to={link.path}

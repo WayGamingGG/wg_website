@@ -2,22 +2,22 @@ import { Calendar } from "lucide-react";
 
 const news = [
   {
-    title: "Vitória no Campeonato Nacional de LoL",
-    excerpt: "A nossa equipa conquistou o primeiro lugar no campeonato nacional após uma final emocionante.",
-    date: "12 Dez 2024",
-    category: "League of Legends",
+    title: "Férias de Natal",
+    excerpt: "Chegamos na melhor época do Ano, e a WG também precisa de descanso, estaremos de férias do dia 22/12 até 02/01.",
+    date: "22 Dez 2025",
+    category: "Organização",
   },
   {
-    title: "Novo Reforço para Valorant",
-    excerpt: "Anunciamos a contratação de um novo jogador estrela para fortalecer a nossa lineup.",
-    date: "10 Dez 2024",
+    title: "Radiant Master’s Cup",
+    excerpt: "A nossa equipa participou nessas ultimas semanas do torneio Radiant Master's Cup de Valorant, onde fizemos uma boa campanha neste campeonato nacional.",
+    date: "12 Dez 2025",
     category: "Valorant",
   },
   {
-    title: "Parceria com Marca Internacional",
-    excerpt: "Fechamos uma parceria estratégica que vai impulsionar o nosso crescimento.",
-    date: "8 Dez 2024",
-    category: "Organização",
+    title: "Kaito’s Tournament",
+    excerpt: "Nossas duas equipas de League of Legends, participaram da competição Kaito’s Tournament, sediada na Alemanha, onde a nossa equipa Way Ward levou a melhor e foi campeã do torneio.",
+    date: "10 Dez 2025",
+    category: "League of Legends",
   },
 ];
 

@@ -87,13 +87,16 @@
     text-shadow: var(--neon-glow-strong);
   }
 
-  .box-glow {
-    box-shadow: var(--neon-glow);
-  }
+ .box-glow {
+  filter: drop-shadow(0 0 6px rgba(255, 200, 0, 0.6));
+}
 
   .box-glow-strong {
-    box-shadow: var(--neon-glow-strong);
-  }
+  filter:
+    drop-shadow(0 0 6px rgba(255, 200, 0, 0.6))
+    drop-shadow(0 0 14px rgba(255, 200, 0, 0.9));
+  transform: scale(1.05);
+}
 
   .gradient-text {
     background: var(--gradient-primary);

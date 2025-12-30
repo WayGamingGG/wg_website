@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { Gamepad2, Twitter, Instagram, Youtube, Twitch } from "lucide-react";
 
 const socialLinks = [
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Twitter, href: "https://x.com/Waygaming_org", label: "Twitter" },
+  { icon: Instagram, href: "https://www.instagram.com/waygamingesports/", label: "Instagram" },
   { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Twitch, href: "#", label: "Twitch" },
+  { icon: Twitch, href: "https://www.twitch.tv/waygamingesports", label: "Twitch" },
 ];
 
 const footerLinks = [
@@ -20,8 +20,8 @@ const footerLinks = [
     title: "Organization",
     links: [
       { name: "About Us", path: "/about" },
-      { name: "Contact", path: "#" },
-      { name: "Careers", path: "#" },
+      { name: "Contact", path: "/contact" },
+      { name: "Careers", path: "/careers" },
     ],
   },
   {
@@ -41,22 +41,29 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center box-glow">
-                <Gamepad2 className="w-7 h-7 text-primary-foreground" />
-              </div>
+              <img
+              src="./public/WG.png"
+              className="
+                w-16 h-16
+                box-glow
+                group-hover:box-glow-strong
+                transition-all duration-300
+              "
+            />
               <span className="font-display text-2xl font-bold text-foreground">
-                NEXUS<span className="text-primary">GG</span>
+                WAY<span className="text-primary">GAMING</span>
               </span>
             </Link>
             <p className="text-muted-foreground font-body mb-6 max-w-sm">
               Somos uma organização de esports dedicada à excelência competitiva 
-              e ao desenvolvimento de talentos nas maiores competições do mundo.
+              e ao desenvolvimento de talentos.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
                   aria-label={social.label}
                   className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all duration-300"
                 >
@@ -90,7 +97,7 @@ export const Footer = () => {
 
         <div className="border-t border-border mt-12 pt-8 text-center">
           <p className="font-body text-sm text-muted-foreground">
-            © {new Date().getFullYear()} NexusGG. Todos os direitos reservados.
+            © {new Date().getFullYear()} WayGaming. Todos os direitos reservados.
           </p>
         </div>
       </div>

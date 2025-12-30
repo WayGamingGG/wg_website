@@ -11,6 +11,10 @@ import Valorant from "./pages/Valorant";
 import Store from "./pages/Store";
 import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
+import Careers from "./pages/Careers";
+import Contact from "./pages/Contact";
+import Staff from "./pages/Staff";
+import Streamers from "./pages/Streamers";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +30,10 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/league-of-legends" element={<LeagueOfLegends />} />
             <Route path="/valorant" element={<Valorant />} />
+            <Route path="/streamers" element={<Streamers />} />
+            <Route path="/staff" element={<Staff />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/store" element={<Store />} />
             <Route path="/store/product/:handle" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />

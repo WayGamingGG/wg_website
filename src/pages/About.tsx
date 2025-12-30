@@ -4,43 +4,34 @@ import { Trophy, Users, Target, Heart, Zap, Shield } from "lucide-react";
 const values = [
   {
     icon: Trophy,
-    title: "Excelência",
-    description: "Buscamos sempre o mais alto nível de performance em todas as competições.",
+    title: "Humildade",
+    description: "A Way Gaming promove a humildade como princípio fundamental de crescimento contínuo. Reconhecemos que a evolução individual e coletiva depende da capacidade de aprender, aceitar feedback e respeitar todos os intervenientes do ecossistema competitivo.",
   },
   {
     icon: Users,
-    title: "Comunidade",
-    description: "Valorizamos os nossos fãs e construímos uma comunidade unida e apaixonada.",
+    title: "Responsabilidade",
+    description: "Cada membro da Way Gaming assume plena responsabilidade pelas suas ações, decisões e compromissos. Atuamos com profissionalismo, disciplina e respeito, representando a organização com seriedade dentro e fora da competição.",
   },
   {
     icon: Target,
-    title: "Foco",
-    description: "Mantemos o foco nos nossos objetivos com determinação inabalável.",
+    title: "Lealdade",
+    description: "A lealdade é um valor central na Way Gaming. Mantemos um compromisso sólido com a organização, os colegas e os parceiros, preservando a confiança, o respeito mútuo e a integridade em todas as circunstâncias. Lealdade e um facto chave para a fundacao dos nossos projectos. E neste principio que conseguimos crescer no ritmo que temos tido.",
   },
   {
     icon: Heart,
-    title: "Paixão",
-    description: "O amor pelo gaming é o que nos move todos os dias.",
+    title: "Amizade",
+    description: "A Way Gaming valoriza relações fora do contexto de trabalho e competicao entre os jogadores e staff. A amizade fortalece o ambiente interno, promove o bem-estar dos seus membros e contribui para um desempenho sustentável e positivo quando desempenhadas as tarefas de contexto profissional",
   },
   {
     icon: Zap,
-    title: "Inovação",
-    description: "Abraçamos novas tecnologias e métodos de treino.",
+    title: "Determinação",
+    description: "A determinação orienta a nossa atuação competitiva. Enfrentamos desafios com foco, resiliência e ambição, procurando a melhoria constante e a superação de obstáculos na busca pelos nossos objetivos. Alienada com a Forca de Vontade, ter determinacao e um facor igualmente vital para superar obstaculos externos e internos.",
   },
   {
     icon: Shield,
-    title: "Integridade",
-    description: "Competimos com honra e respeitamos todos os adversários.",
+    title: "União",
+    description: "A união reflete a força coletiva da Way Gaming. Acreditamos no trabalho em equipa, na comunicação eficaz e na colaboração contínua como pilares essenciais para alcançar resultados consistentes e duradouros. A Way Gaming cresce acima de tudo baseada no seu slogan, Somos Uma Voz, Não um Eco. Significando assim, que agimos em unissuno, todos juntos como uma so pessoa.",
   },
-];
-
-const milestones = [
-  { year: "2019", event: "Fundação da NexusGG" },
-  { year: "2020", event: "Primeira equipa de LoL formada" },
-  { year: "2021", event: "Expansão para Valorant" },
-  { year: "2022", event: "Primeiro título nacional" },
-  { year: "2023", event: "Qualificação europeia" },
-  { year: "2024", event: "Múltiplos títulos e crescimento" },
 ];
 
 const About = () => {
@@ -54,12 +45,10 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
             <h1 className="font-display text-5xl md:text-7xl font-black mb-6">
-              SOBRE A <span className="gradient-text">NEXUSGG</span>
+              SOBRE A <span className="gradient-text">WAY GAMING</span>
             </h1>
             <p className="font-body text-xl text-muted-foreground">
-              Fundada em 2019, a NexusGG nasceu com a missão de elevar o esports 
-              português ao mais alto nível mundial. Somos mais do que uma organização 
-              — somos uma família de competidores apaixonados.
+              A Way Gaming é uma organização de esports focada no desenvolvimento competitivo, profissionalismo e crescimento sustentável. Com equipas estruturadas, staff dedicado e centros de treino próprios, a organização atua em títulos como League of Legends e Valorant, promovendo talento, disciplina e evolução contínua. A Way Gaming representa mais do que competição — é um caminho para quem quer levar o seu potencial ao próximo nível.
             </p>
           </div>
         </div>
@@ -68,32 +57,37 @@ const About = () => {
       {/* Story Section */}
       <section className="py-24 bg-card">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-1 gap-16 items-center max-w-6xl mx-auto">
             <div>
               <h2 className="font-display text-4xl font-bold mb-6">
                 A NOSSA <span className="text-primary">HISTÓRIA</span>
               </h2>
-              <div className="space-y-4 font-body text-muted-foreground text-lg">
+              <div className="space-y-4 font-body text-muted-foreground text-lg
+                columns-1 md:columns-2 lg:columns-3
+                gap-12">
                 <p>
-                  A NexusGG começou como um sonho de um grupo de amigos apaixonados 
-                  por gaming competitivo. O que começou em pequenas competições locais 
-                  rapidamente evoluiu para uma das organizações mais respeitadas de Portugal.
+                  A Way Gaming teve início em novembro de 2024, num pequeno servidor de Discord chamado The Way Talk. Impulsionados pela existência da empresa The Way Talk (uma plataforma digital de comunicação sediada no Reino Unido), Emanuel Ferreira (Manager) e Guilherme Azevedo (Jogador) decidiram levar a sua experiência casual no gaming para um nível superior.
+                </p>
+                <p>“E se formássemos uma equipa?”</p>
+                <p>
+                  Algumas semanas depois, teve início o processo de recrutamento, e rapidamente vários candidatos se juntaram ao projeto. Com determinação e disciplina, começaram sessões de treino diárias.
                 </p>
                 <p>
-                  Hoje, representamos o talento português nos maiores palcos do mundo, 
-                  com equipas de elite em League of Legends e Valorant. A nossa dedicação 
-                  ao desenvolvimento de jogadores e à excelência competitiva é o que nos define.
+                  À medida que surgiam desafios e obstáculos ao longo do percurso, fevereiro de 2025 marcou um ponto de viragem para a Way Gaming com o surgimento de uma ideia inovadora:
+a criação de um centro de treino dedicado a jogadores de League of Legends.
                 </p>
-                <p>
-                  Com instalações de treino de ponta e um staff técnico experiente, 
-                  proporcionamos as melhores condições para que os nossos atletas 
-                  alcancem o seu potencial máximo.
-                </p>
+                <p>Esta iniciativa redefiniu por completo o nível de compromisso do grupo. A Academy Way Gaming (nome atribuído ao centro de treino) captou rapidamente a atenção da comunidade de League of Legends, que cedo percebeu que já não se tratava apenas de um grupo de amigos a jogar por diversão, mas de uma organização com objetivos claros de crescimento, profissionalismo e dedicação, destacando-se das restantes equipas existentes.</p>
+                <p>O projeto ganhou impulso, atraindo cada vez mais jogadores interessados. Em apenas duas semanas de tryouts — concebidos para avaliar os participantes a nível técnico, emocional e psicológico — a criação de três equipas oficiais de League of Legends tornou-se uma realidade.</p>
+                <p>As sessões de treino passaram a ser estruturadas e organizadas, com o apoio de uma equipa dedicada, capitães e Coachs para cada equipa.</p>
+                <p>Em Setembro de 2025 a Way Gaming da outro passo gigante na sua estrutura. A expansao para o Valorant.
+Com a colaboração e promoção de Tomas Lameirinha (Ex- Capitão de equipa League Of Legends) para Manager e líder  integral do projeto Academy Valorant, a Way Gaming recebe mais de duas dezenas de jogadores e membros staff com interesse em mostrar o seu potencial.</p>
+              <p>Atualmente, a Way Gaming continua a crescer — e o resto da história…
+será testemunhado por ti.</p>
               </div>
             </div>
             
             {/* Timeline */}
-            <div className="relative">
+            {/* <div className="relative">
               <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border" />
               {milestones.map((milestone, index) => (
                 <div key={index} className="relative pl-12 pb-8 last:pb-0">
@@ -108,7 +102,7 @@ const About = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -158,7 +152,7 @@ const About = () => {
               para competir ao mais alto nível, queremos conhecer-te.
             </p>
             <a
-              href="mailto:contact@nexusgg.pt"
+              href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-body font-semibold uppercase tracking-wider hover:bg-primary/90 box-glow hover:box-glow-strong transition-all duration-300"
             >
               Contactar

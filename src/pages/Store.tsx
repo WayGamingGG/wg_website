@@ -27,8 +27,8 @@ const Store = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Loja | NexusGG Esports</title>
-        <meta name="description" content="Loja oficial NexusGG. Compre merchandise exclusivo da organização de esports." />
+        <title>WayGaming Esports</title>
+        <meta name="description" content="" />
       </Helmet>
 
       <section className="pt-32 pb-20">
