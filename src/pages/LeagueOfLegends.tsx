@@ -6,38 +6,58 @@ import { Gamepad2, Trophy, Calendar } from "lucide-react";
 const lolPlayers: Player[] = [
   {
     id: "1",
-    nickname: "STORM",
-    realName: "João Silva",
+    nickname: "MOREIRAOO",
+    realName: "",
     role: "Top Laner",
-    nationality: "🇵🇹",
+    nationality: "🇧🇷",
+    image: "moreirao.jpg"
   },
   {
     id: "2",
-    nickname: "SHADOW",
-    realName: "Miguel Santos",
+    nickname: "LUCAS",
+    realName: "",
     role: "Jungler",
     nationality: "🇵🇹",
+    image: "seju.jpg"
   },
   {
     id: "3",
-    nickname: "PHOENIX",
-    realName: "André Costa",
+    nickname: "DOOMA",
+    realName: "",
     role: "Mid Laner",
     nationality: "🇵🇹",
+    image: "tf.jpg"
   },
   {
     id: "4",
-    nickname: "VIPER",
-    realName: "Ricardo Ferreira",
+    nickname: "RYZEN",
+    realName: "",
     role: "ADC",
     nationality: "🇵🇹",
+    image: "vayne.jpg"
   },
   {
     id: "5",
-    nickname: "Zukanoob",
-    realName: "Pedro Oliveira",
+    nickname: "ZUKANOOB",
+    realName: "",
     role: "Support",
     nationality: "🇧🇷",
+    image: "zilean.jpg"
+  },
+  {
+    id: "6",
+    nickname: "PYKER",
+    realName: "",
+    role: "Support",
+    nationality: "🇵🇹",
+    image: "pyke.jpg"
+  },{
+    id: "7",
+    nickname: "DE",
+    realName: "",
+    role: "Jungler",
+    nationality: "🇵🇹",
+    image: "graves.jpg"
   },
 ];
 
@@ -46,8 +66,8 @@ const LeagueOfLegends = () => {
     <Layout>
       <TeamHeader
         title="LEAGUE OF LEGENDS"
-        subtitle="Nossas Equipas"
-        description="A Way Gaming conta com três equipas de League of Legends, focadas no competitivo e integradas num modelo de Academy, onde a evolução coletiva e individual é prioridade. Cada equipa é acompanhada por coaches de equipa e individuais, garantindo desenvolvimento contínuo, disciplina e alto rendimento."
+        subtitle="Nossa Equipa"
+        description="A Way Gaming conta com sua equipa principal de League of Legends, focadas no competitivo nacional e internacional. Temos uma estrutura integrada num modelo de Academy, onde a evolução coletiva e individual é prioridade. Cada equipa é acompanhada por coaches de equipa e individuais, garantindo desenvolvimento contínuo, disciplina e alto rendimento."
         accentColor="bg-blue-500"
         icon={<Gamepad2 className="w-5 h-5 text-blue-400" />}
       />
@@ -57,52 +77,7 @@ const LeagueOfLegends = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              WAY <span className="text-primary">CORE</span>
-            </h2>
-            <p className="font-body text-xl text-muted-foreground">
-              We are a Voice, not an Echo
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
-            {lolPlayers.map((player) => (
-              <PlayerCard
-                key={player.id}
-                player={player}
-                accentColor="from-blue-500/30"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              WAY <span className="text-primary">WARD</span>
-            </h2>
-            <p className="font-body text-xl text-muted-foreground">
-              We are a Voice, not an Echo
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
-            {lolPlayers.map((player) => (
-              <PlayerCard
-                key={player.id}
-                player={player}
-                accentColor="from-blue-500/30"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              WAY <span className="text-primary">OUTLAWS</span>
+              WAY <span className="text-primary">GAMING</span>
             </h2>
             <p className="font-body text-xl text-muted-foreground">
               We are a Voice, not an Echo

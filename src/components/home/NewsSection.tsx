@@ -2,10 +2,11 @@ import { Calendar } from "lucide-react";
 
 const news = [
   {
-    title: "Férias de Natal",
-    excerpt: "Chegamos na melhor época do Ano, e a WG também precisa de descanso, estaremos de férias do dia 22/12 até 02/01.",
-    date: "22 Dez 2025",
-    category: "Organização",
+    title: "LPLOL WINTER SPLIT 2026",
+    excerpt: "Nossa equipa principal de league of legends está oficialmente qualificada para a LPLOL WINTER SPLIT 2026 ",
+    date: "05 Jan 2026",
+    category: "League of Legends",
+    image: "/lplol.jpg"
   },
   {
     title: "Radiant Master’s Cup",
@@ -41,8 +42,17 @@ export const NewsSection = () => {
               className="group bg-background rounded-xl border border-border overflow-hidden hover:border-primary/50 transition-all duration-300"
             >
               {/* Image Placeholder */}
-              <div className="aspect-video bg-secondary relative overflow-hidden">
+              <div className="aspect-video relative overflow-hidden">
+                {item.image && (
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                )}
+
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+
                 <span className="absolute bottom-4 left-4 px-3 py-1 bg-primary text-primary-foreground text-xs font-body font-semibold uppercase tracking-wider rounded">
                   {item.category}
                 </span>

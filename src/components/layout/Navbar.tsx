@@ -18,7 +18,6 @@ const esportsLinks = [
 ];
 
 const navLinks = [
-  { name: "Home", path: "/wg" },
   { name: "About", path: "/about" },
   { name: "Streamers", path: "/streamers" },
   { name: "Equipa", path: "/staff" },
@@ -39,7 +38,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link to="/wg" className="flex items-center gap-3 group">
             <img
-              src="./public/waylogo.png"
+              src="/waylogo.png"
               className="
                 w-20 h-20
                 box-glow

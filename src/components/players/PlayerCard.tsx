@@ -25,12 +25,22 @@ export const PlayerCard = ({ player, accentColor = "from-primary/20" }: PlayerCa
         )} />
         
         {/* Placeholder Avatar */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center">
-            <span className="font-display text-3xl font-bold text-muted-foreground">
-              {player.nickname.charAt(0)}
-            </span>
-          </div>
+        <div className="absolute inset-0">
+          {player.image ? (
+            <img
+              src={`/players/${player.image}`}
+              alt={player.nickname}
+              className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-500"
+            />
+          ) : (
+            <div className="flex items-center justify-center w-full h-full">
+              <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center">
+                <span className="font-display text-3xl font-bold text-muted-foreground">
+                  {player.nickname.charAt(0)}
+                </span>
+              </div>
+            </div>
+          )}
         </div>
         
         {/* Overlay on hover */}

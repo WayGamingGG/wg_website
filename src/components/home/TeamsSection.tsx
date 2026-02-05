@@ -8,16 +8,14 @@ const teams = [
     slug: "league-of-legends",
     description: "Nossas equipas de League of Legends competindo ao mais alto nível com estratégia e performance coletiva.",
     color: "from-blue-500/20 to-purple-500/20",
-    borderColor: "border-blue-500/50",
-    players: 20,
+    borderColor: "border-blue-500/50"
   },
   {
     name: "Valorant",
     slug: "valorant",
     description: "Nossas equipas de Valorant dominando o cenário tático de shooters com estratégia e precisão.",
     color: "from-red-500/20 to-orange-500/20",
-    borderColor: "border-red-500/50",
-    players: 15,
+    borderColor: "border-red-500/50"
   },
 ];
 
@@ -27,7 +25,7 @@ export const TeamsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            NOSSOS <span className="text-primary">ROSTERS</span>
+            NOSSAS <span className="text-primary">MODALIDADES</span>
           </h2>
           <p className="font-body text-xl text-muted-foreground max-w-2xl mx-auto">
             Duas divisões de elite da WayGaming competindo no cenário de esports nacional e internacional.

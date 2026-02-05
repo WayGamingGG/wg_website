@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const stats = [
   { icon: Trophy, value: "5+", label: "Campeonatos" },
   { icon: Users, value: "30+", label: "Jogadores" },
-  { icon: Target, value: "2", label: "Rosters" },
+  { icon: Target, value: "2", label: "Modalidades" },
 ];
 
 export const HeroSection = () => {

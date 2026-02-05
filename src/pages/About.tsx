@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { Trophy, Users, Target, Heart, Zap, Shield } from "lucide-react";
+import { Trophy, Users, Target, Heart, Zap, Shield, Link } from "lucide-react";
 
 const values = [
   {
@@ -152,11 +152,10 @@ será testemunhado por ti.</p>
               para competir ao mais alto nível, queremos conhecer-te.
             </p>
             <a
-              href="/contact"
+              href="/careers"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-body font-semibold uppercase tracking-wider hover:bg-primary/90 box-glow hover:box-glow-strong transition-all duration-300"
-            >
+            ></a>
               Contactar
-            </a>
           </div>
         </div>
       </section>

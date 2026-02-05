@@ -40,9 +40,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-6">
+            <Link to="/wg" className="flex items-center gap-3 mb-6">
               <img
-              src="./public/waylogo.png"
+              src="/waylogo.png"
               className="
                 w-16 h-16
                 box-glow
