@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import Splash from "./pages/Splash";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import LeagueOfLegends from "./pages/LeagueOfLegends";
@@ -15,6 +16,12 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import Staff from "./pages/Staff";
 import Streamers from "./pages/Streamers";
+import WGIndex from "./components/wg-colosseum/WGIndex";
+import WGTeams from "./components/wg-colosseum/WGTeams";
+import WGSchedule from "./components/wg-colosseum/WGSchedule";
+import WGStandings from "./components/wg-colosseum/WGStandings";
+import WGRules from "./components/wg-colosseum/WGRules";
+
 
 const queryClient = new QueryClient();
 
@@ -26,7 +33,8 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<Splash />} />
+            <Route path="/wg" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/league-of-legends" element={<LeagueOfLegends />} />
             <Route path="/valorant" element={<Valorant />} />
@@ -36,6 +44,11 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/store" element={<Store />} />
             <Route path="/store/product/:handle" element={<ProductDetail />} />
+            <Route path="/wg-colosseum" element={<WGIndex />} />
+            <Route path="/wg-colosseum/equipas" element={<WGTeams />} />
+            <Route path="/wg-colosseum/classificacao" element={<WGStandings />} />
+            <Route path="/wg-colosseum/calendario" element={<WGSchedule />} />
+            <Route path="/wg-colosseum/regras" element={<WGRules />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

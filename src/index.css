@@ -87,16 +87,13 @@
     text-shadow: var(--neon-glow-strong);
   }
 
- .box-glow {
-  filter: drop-shadow(0 0 6px rgba(255, 200, 0, 0.6));
-}
+  .box-glow {
+    box-shadow: var(--neon-glow);
+  }
 
   .box-glow-strong {
-  filter:
-    drop-shadow(0 0 6px rgba(255, 200, 0, 0.6))
-    drop-shadow(0 0 14px rgba(255, 200, 0, 0.9));
-  transform: scale(1.05);
-}
+    box-shadow: var(--neon-glow-strong);
+  }
 
   .gradient-text {
     background: var(--gradient-primary);
@@ -156,4 +153,31 @@
 
 .animate-glow-pulse {
   animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* WG Colosseum Theme */
+.bg-wg-background {
+  background-color: #0a0a0f;
+}
+
+.text-wg-foreground {
+  color: #f5f5f5;
+}
+
+.wg-text-gradient {
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wg-bg-grid {
+  background-image: 
+    linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.wg-gradient-radial {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
 }

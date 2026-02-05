@@ -64,7 +64,7 @@ const Valorant = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              O NOSSO <span className="text-accent">REAPERS</span>
+              WAY <span className="text-accent">REAPERS</span>
             </h2>
             <p className="font-body text-xl text-muted-foreground">
               Cinco agentes prontos para qualquer desafio
