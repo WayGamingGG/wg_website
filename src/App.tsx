@@ -34,21 +34,21 @@ const App = () => (
         <HashRouter>
           <Routes>
             <Route path="/" element={<Splash />} />
-            <Route path="/wg" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/league-of-legends" element={<LeagueOfLegends />} />
-            <Route path="/valorant" element={<Valorant />} />
-            <Route path="/streamers" element={<Streamers />} />
-            <Route path="/staff" element={<Staff />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/store" element={<Store />} />
-            <Route path="/store/product/:handle" element={<ProductDetail />} />
-            <Route path="/wg-colosseum" element={<WGIndex />} />
-            <Route path="/wg-colosseum/equipas" element={<WGTeams />} />
-            <Route path="/wg-colosseum/classificacao" element={<WGStandings />} />
-            <Route path="/wg-colosseum/calendario" element={<WGSchedule />} />
-            <Route path="/wg-colosseum/regras" element={<WGRules />} />
+            <Route path="wg" element={<Index />} />
+            <Route path="about" element={<About />} />
+            <Route path="league-of-legends" element={<LeagueOfLegends />} />
+            <Route path="valorant" element={<Valorant />} />
+            <Route path="streamers" element={<Streamers />} />
+            <Route path="staff" element={<Staff />} />
+            <Route path="careers" element={<Careers />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="store" element={<Store />} />
+            <Route path="store/product/:handle" element={<ProductDetail />} />
+            <Route path="wg-colosseum" element={<WGIndex />} />
+            <Route path="wg-colosseum/equipas" element={<WGTeams />} />
+            <Route path="wg-colosseum/classificacao" element={<WGStandings />} />
+            <Route path="wg-colosseum/calendario" element={<WGSchedule />} />
+            <Route path="wg-colosseum/regras" element={<WGRules />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </HashRouter>

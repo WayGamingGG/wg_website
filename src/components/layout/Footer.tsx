@@ -42,7 +42,7 @@ export const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
               <img
-              src="./public/WG.png"
+              src="./public/waylogo.png"
               className="
                 w-16 h-16
                 box-glow

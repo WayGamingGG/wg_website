@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Gamepad2, ChevronDown } from "lucide-react";
+import { Menu, X, Gamepad2, ChevronDown, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CartDrawer } from "@/components/store/CartDrawer";
@@ -18,7 +18,7 @@ const esportsLinks = [
 ];
 
 const navLinks = [
-  { name: "Home", path: "/" },
+  { name: "Home", path: "/wg" },
   { name: "About", path: "/about" },
   { name: "Streamers", path: "/streamers" },
   { name: "Equipa", path: "/staff" },
@@ -37,9 +37,9 @@ export const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/wg" className="flex items-center gap-3 group">
             <img
-              src="./public/WG.png"
+              src="./public/waylogo.png"
               className="
                 w-20 h-20
                 box-glow
@@ -130,7 +130,16 @@ export const Navbar = () => {
               </Link>
             ))}
           </div>
-
+          
+          {/* Button back */}
+          <div className="hidden md:flex items-center gap-3">
+            <Link to="/">
+              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
+                <Home className="w-4 h-4 mr-2" />
+                Voltar
+              </Button>
+            </Link>
+          </div>
           {/* CTA Button & Cart */}
           {/* <div className="hidden md:flex items-center gap-3">
             <CartDrawer />
