@@ -5,7 +5,7 @@ export interface StaffMember {
   name: string;
   role: string;
   description: string;
-  nationality: string;
+  nationality?: string;
   image?: string;
 }
 

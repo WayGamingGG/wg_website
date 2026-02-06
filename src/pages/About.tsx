@@ -1,9 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
-import { Trophy, Users, Target, Heart, Zap, Shield, Link } from "lucide-react";
+import { Handshake, Users, Target, Heart, Zap, Shield, Link } from "lucide-react";
 
 const values = [
   {
-    icon: Trophy,
+    icon: Handshake,
     title: "Humildade",
     description: "A Way Gaming promove a humildade como princípio fundamental de crescimento contínuo. Reconhecemos que a evolução individual e coletiva depende da capacidade de aprender, aceitar feedback e respeitar todos os intervenientes do ecossistema competitivo.",
   },
@@ -48,7 +48,7 @@ const About = () => {
               SOBRE A <span className="gradient-text">WAY GAMING</span>
             </h1>
             <p className="font-body text-xl text-muted-foreground">
-              A Way Gaming é uma organização de esports focada no desenvolvimento competitivo, profissionalismo e crescimento sustentável. Com equipas estruturadas, staff dedicado e centros de treino próprios, a organização atua em títulos como League of Legends e Valorant, promovendo talento, disciplina e evolução contínua. A Way Gaming representa mais do que competição — é um caminho para quem quer levar o seu potencial ao próximo nível.
+              A Way Gaming é uma organização de esports focada no desenvolvimento competitivo, profissionalismo e crescimento sustentável. Com equipas estruturadas, staff dedicado e centros de treino próprios, a organização atua em títulos como League of Legends e Valorant, promovendo talento, disciplina e evolução contínua. A Way Gaming representa mais do que competição, é um caminho para quem quer levar o seu potencial ao próximo nível.
             </p>
           </div>
         </div>
@@ -77,11 +77,11 @@ const About = () => {
 a criação de um centro de treino dedicado a jogadores de League of Legends.
                 </p>
                 <p>Esta iniciativa redefiniu por completo o nível de compromisso do grupo. A Academy Way Gaming (nome atribuído ao centro de treino) captou rapidamente a atenção da comunidade de League of Legends, que cedo percebeu que já não se tratava apenas de um grupo de amigos a jogar por diversão, mas de uma organização com objetivos claros de crescimento, profissionalismo e dedicação, destacando-se das restantes equipas existentes.</p>
-                <p>O projeto ganhou impulso, atraindo cada vez mais jogadores interessados. Em apenas duas semanas de tryouts — concebidos para avaliar os participantes a nível técnico, emocional e psicológico — a criação de três equipas oficiais de League of Legends tornou-se uma realidade.</p>
+                <p>O projeto ganhou impulso, atraindo cada vez mais jogadores interessados. Em apenas duas semanas de tryouts, concebidos para avaliar os participantes a nível técnico, emocional e psicológico — a criação de três equipas oficiais de League of Legends tornou-se uma realidade.</p>
                 <p>As sessões de treino passaram a ser estruturadas e organizadas, com o apoio de uma equipa dedicada, capitães e Coachs para cada equipa.</p>
                 <p>Em Setembro de 2025 a Way Gaming da outro passo gigante na sua estrutura. A expansao para o Valorant.
 Com a colaboração e promoção de Tomas Lameirinha (Ex- Capitão de equipa League Of Legends) para Manager e líder  integral do projeto Academy Valorant, a Way Gaming recebe mais de duas dezenas de jogadores e membros staff com interesse em mostrar o seu potencial.</p>
-              <p>Atualmente, a Way Gaming continua a crescer — e o resto da história…
+              <p>Atualmente, a Way Gaming continua a crescer, e o resto da história…
 será testemunhado por ti.</p>
               </div>
             </div>

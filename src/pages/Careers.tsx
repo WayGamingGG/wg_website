@@ -3,71 +3,59 @@ import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Users, Trophy, Megaphone, Camera, Code, Briefcase } from "lucide-react";
+import { ExternalLink, Users, Trophy, Megaphone, Camera, Code, Briefcase, Target, BarChart } from "lucide-react";
 
 const positions = [
   {
     title: "League of Legends Coach",
     department: "Esports",
-    icon: Trophy,
-    description: "Procuramos um coach experiente para liderar a nossa equipa de League of Legends. Responsável por desenvolver estratégias, analisar adversários e orientar jogadores para o máximo desempenho.",
+    icon: Target,
+    description: "Procuramos um coach para liderar a nossa equipa academy de League of Legends. Responsável por desenvolver estratégias, analisar adversários e orientar jogadores para o máximo desempenho.",
     requirements: [
-      "Experiência mínima de 2 anos como coach",
-      "Conhecimento profundo do meta atual",
+      "Sem experiência mínima",
+      "Conhecimento do meta atual",
       "Capacidade de liderança e comunicação",
-      "Disponibilidade para viajar"
+      "Disponibilidade para scrims e treinos"
     ]
   },
   {
-    title: "Valorant Analyst",
+    title: "League of Legends Analyst",
     department: "Esports",
-    icon: Trophy,
-    description: "Analista dedicado para a equipa de Valorant. Responsável por estudar adversários, criar relatórios táticos e apoiar o coach na preparação de jogos.",
+    icon: BarChart,
+    description: "Analista dedicado para a equipa de league of legends. Responsável por estudar adversários, criar relatórios táticos e apoiar o coach na preparação de jogos.",
     requirements: [
-      "Experiência em análise competitiva",
       "Domínio de ferramentas de VOD review",
-      "Rank Immortal+ preferencial",
-      "Fluência em português e inglês"
+      "Rank D4+ preferencial",
+      "Fluência em português e inglês",
+      "Boa capacidade de comunicação"
     ]
   },
+  // {
+  //   title: "Social Media Manager",
+  //   department: "Marketing",
+  //   icon: Megaphone,
+  //   description: "Gestão das redes sociais da organização. Criação de conteúdo, engagement com a comunidade e desenvolvimento da presença digital da NexusGG.",
+  //   requirements: [
+  //     "Experiência em gestão de redes sociais",
+  //     "Conhecimento do ecossistema esports",
+  //     "Criatividade e proatividade",
+  //     "Domínio de ferramentas de design"
+  //   ]
+  // },
   {
-    title: "Social Media Manager",
-    department: "Marketing",
-    icon: Megaphone,
-    description: "Gestão das redes sociais da organização. Criação de conteúdo, engagement com a comunidade e desenvolvimento da presença digital da NexusGG.",
-    requirements: [
-      "Experiência em gestão de redes sociais",
-      "Conhecimento do ecossistema esports",
-      "Criatividade e proatividade",
-      "Domínio de ferramentas de design"
-    ]
-  },
-  {
-    title: "Content Creator",
-    department: "Content",
+    title: "Streamer/Caster",
+    department: "Streamer",
     icon: Camera,
-    description: "Criação de conteúdo vídeo e gráfico para as plataformas da organização. Cobertura de eventos, highlights de jogos e conteúdo para redes sociais.",
+    description: "Criação de conteúdo para as plataformas digitais. Cobertura de eventos, highlights de jogos e conteúdo para redes sociais.",
     requirements: [
-      "Experiência com edição de vídeo",
-      "Conhecimento de Adobe Premiere/After Effects",
+      "Mínimo de 5 horas semanais",
+      "Experiência como caster é mais valia",
       "Paixão por esports e gaming",
-      "Portfolio de trabalhos anteriores"
+      "Portfolio de trabalhos anteriores (Opcional)"
     ]
   },
   {
-    title: "Web Developer",
-    department: "Tech",
-    icon: Code,
-    description: "Desenvolvimento e manutenção do website e plataformas digitais da organização. Stack moderno com React e TypeScript.",
-    requirements: [
-      "Experiência com React e TypeScript",
-      "Conhecimento de APIs REST",
-      "Experiência com design responsivo",
-      "Familiaridade com Git"
-    ]
-  },
-  {
-    title: "Team Manager",
+    title: "Staff",
     department: "Operations",
     icon: Users,
     description: "Gestão operacional das equipas. Coordenação de horários, logística de eventos e suporte aos jogadores no dia-a-dia.",

@@ -39,11 +39,12 @@ export const Navbar = () => {
           <Link to="/wg" className="flex items-center gap-3 group">
             <img
               src="/waylogo.png"
+              alt="Way Gaming"
               className="
                 w-20 h-20
-                box-glow
-                group-hover:box-glow-strong
                 transition-all duration-300
+                drop-shadow-[0_0_12px_rgba(0,255,200,0.6)]
+                group-hover:drop-shadow-[0_0_22px_rgba(0,255,200,0.9)]
               "
             />
             <span className="font-display text-2xl font-bold text-foreground">
@@ -53,19 +54,6 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {/* Home Link */}
-            <Link
-              to="/"
-              className={cn(
-                "px-4 py-2 font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-md",
-                location.pathname === "/"
-                  ? "text-primary text-glow"
-                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-              )}
-            >
-              Home
-            </Link>
-
             {/* About Link */}
             <Link
               to="/about"
@@ -76,7 +64,7 @@ export const Navbar = () => {
                   : "text-muted-foreground hover:text-foreground hover:bg-secondary"
               )}
             >
-              About
+              Sobre nós
             </Link>
 
             {/* E-Sports Dropdown */}
@@ -162,18 +150,6 @@ export const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden py-4 border-t border-border animate-slide-up">
-            <Link
-              to="/"
-              onClick={() => setIsOpen(false)}
-              className={cn(
-                "block px-4 py-3 font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300",
-                location.pathname === "/"
-                  ? "text-primary bg-secondary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-              )}
-            >
-              Home
-            </Link>
             <Link
               to="/about"
               onClick={() => setIsOpen(false)}

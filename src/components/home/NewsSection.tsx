@@ -31,7 +31,7 @@ export const NewsSection = () => {
             ÚLTIMAS <span className="text-primary">NOTÍCIAS</span>
           </h2>
           <p className="font-body text-xl text-muted-foreground max-w-2xl mx-auto">
-            Acompanhe as novidades e conquistas da nossa organização
+            Acompanha as novidades e conquistas da nossa organização
           </p>
         </div>
 

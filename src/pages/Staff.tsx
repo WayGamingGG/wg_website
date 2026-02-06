@@ -7,22 +7,44 @@ const managementStaff: StaffMember[] = [
     id: "1",
     name: "Sparta",
     role: "CEO & Fundador",
-    nationality: "🇵🇹",
-    description: "Fundador da WayGaming com visão de criar a maior organização de esports em Portugal. Mais de 5 anos de experiência no setor.",
+    description: "Fundador da WayGaming com visão de criar a maior organização de esports em Portugal.",
   },
   {
     id: "2",
     name: "Luana",
-    role: "COO",
-    nationality: "🇵🇹",
-    description: "Responsável pelas operações diárias da organização, parcerias comerciais e desenvolvimento de negócios.",
+    role: "Staff League of Legends",
+    description: "Responsável pelas operações diárias da organização.",
   },
   {
     id: "3",
     name: "Akira",
-    role: "General Manager",
-    nationality: "🇵🇹",
-    description: "Gestão geral das equipas competitivas, coordenação entre departamentos e representação institucional.",
+    role: "Manager Valorant",
+    description: "Gestão geral das equipas competitivas de valorant.",
+  },{
+    id: "4",
+    name: "BoKa",
+    role: "Manager League of legends",
+    description: "Gestão geral das equipas academy de league of legends.",
+  },{
+    id: "5",
+    name: "Rumival",
+    role: "Manager League of legends",
+    description: "Gestão geral das equipas academy de league of legends.",
+  },{
+    id: "6",
+    name: "Lara",
+    role: "Staff Valorant",
+    description: "Responsável pelas operações diárias da organização.",
+  },{
+    id: "7",
+    name: "Portuga",
+    role: "Staff League of legends",
+    description: "Responsável pelas operações diárias da organização.",
+  },{
+    id: "8",
+    name: "Afonso",
+    role: "Staff Valorant",
+    description: "Responsável pelas operações diárias da organização.",
   },
 ];
 
@@ -143,7 +165,7 @@ const Staff = () => {
       </section>
 
       {/* LoL Staff Section */}
-      <section className="py-20 bg-card">
+      {/* <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-4 mb-12">
             <div className="p-3 bg-blue-500/20 rounded-xl">
@@ -160,10 +182,10 @@ const Staff = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Valorant Staff Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-4 mb-12">
             <div className="p-3 bg-accent/20 rounded-xl">
@@ -180,10 +202,10 @@ const Staff = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Support Staff Section */}
-      <section className="py-20 bg-card">
+      {/* <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-4 mb-12">
             <div className="p-3 bg-gold-dark/20 rounded-xl">
@@ -200,7 +222,7 @@ const Staff = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </Layout>
   );
 };
