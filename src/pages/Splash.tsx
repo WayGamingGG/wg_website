@@ -18,7 +18,7 @@ const Splash = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* NexusGG Option */}
+          {/* Way Option */}
           <Link 
             to="/wg" 
             className="group relative overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-black to-primary/10 p-8 md:p-12 transition-all duration-500 hover:border-primary hover:shadow-[0_0_60px_-10px] hover:shadow-primary/50"
@@ -26,7 +26,11 @@ const Splash = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
               <div className="w-20 h-20 bg-primary/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors">
-                <span className="text-4xl font-display font-bold text-primary">N</span>
+                <img 
+                  src="waylogo.png" 
+                  alt="Way Gaming Logo"
+                  className="w-12 h-12 object-contain"
+                />
               </div>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
                 WAY <span className="text-primary">GAMING ORG</span>
@@ -44,13 +48,19 @@ const Splash = () => {
           </Link>
 
           {/* WG Colosseum Option */}
-          <Link 
-            to="/wg-colosseum" 
-            className="group relative overflow-hidden rounded-2xl border border-violet-500/30 bg-gradient-to-br from-black to-violet-900/20 p-8 md:p-12 transition-all duration-500 hover:border-violet-500 hover:shadow-[0_0_60px_-10px] hover:shadow-violet-500/50"
+          <div 
+            className="group relative overflow-hidden rounded-2xl border border-violet-500/20 bg-gradient-to-br from-black to-violet-900/10 p-8 md:p-12 cursor-not-allowed opacity-70"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Coming Soon Overlay */}
+            <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] z-20 flex items-center justify-center">
+              <div className="text-center">
+                <div className="inline-block px-6 py-3 bg-violet-500/20 border border-violet-500/40 rounded-full">
+                  <span className="text-xl md:text-2xl font-display font-bold text-violet-400">EM BREVE...</span>
+                </div>
+              </div>
+            </div>
             <div className="relative z-10">
-              <div className="w-20 h-20 bg-violet-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-violet-500/30 transition-colors">
+              <div className="w-20 h-20 bg-violet-500/20 rounded-xl flex items-center justify-center mb-6">
                 <span className="text-4xl font-display font-bold text-violet-400">W</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
@@ -59,14 +69,14 @@ const Splash = () => {
               <p className="text-gray-400 mb-6">
                 A liga portuguesa de League of Legends. Competição, glória e a batalha pelo título.
               </p>
-              <div className="flex items-center gap-2 text-violet-400 font-semibold">
+              <div className="flex items-center gap-2 text-violet-400/50 font-semibold">
                 <span>Entrar na Arena</span>
-                <svg className="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </div>
             </div>
-          </Link>
+            </div>
         </div>
       </div>
     </div>
