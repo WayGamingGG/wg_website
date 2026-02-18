@@ -62,8 +62,7 @@ const positions = [
     requirements: [
       "Experiência em gestão de equipas",
       "Excelentes capacidades organizacionais",
-      "Disponibilidade flexível",
-      "Carta de condução"
+      "Disponibilidade flexível"
     ]
   }
 ];

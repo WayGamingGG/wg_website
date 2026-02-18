@@ -11,26 +11,27 @@ const managementStaff: StaffMember[] = [
   },
   {
     id: "2",
-    name: "Luana",
-    role: "Staff League of Legends",
-    description: "Responsável pelas operações diárias da organização.",
-  },
-  {
-    id: "3",
     name: "Akira",
     role: "Manager Valorant",
     description: "Gestão geral das equipas competitivas de valorant.",
   },{
-    id: "4",
-    name: "BoKa",
-    role: "Manager League of legends",
+    id: "3",
+    name: "Zerphys",
+    role: "Tecnico Imagem & video",
     description: "Gestão geral das equipas academy de league of legends.",
   },{
-    id: "5",
+    id: "4",
     name: "Rumival",
     role: "Manager League of legends",
     description: "Gestão geral das equipas academy de league of legends.",
-  },{
+  },
+  {
+    id: "5",
+    name: "Luana",
+    role: "Staff League of Legends",
+    description: "Responsável pelas operações diárias da organização.",
+  }
+  ,{
     id: "6",
     name: "Lara",
     role: "Staff Valorant",
@@ -45,6 +46,11 @@ const managementStaff: StaffMember[] = [
     name: "Afonso",
     role: "Staff Valorant",
     description: "Responsável pelas operações diárias da organização.",
+  },{
+    id: "9",
+    name: "BoKa",
+    role: "Software Develop",
+    description: "",
   },
 ];
 

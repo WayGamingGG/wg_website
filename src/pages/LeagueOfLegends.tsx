@@ -7,7 +7,7 @@ const lolPlayers: Player[] = [
   {
     id: "1",
     nickname: "MOREIRAOO",
-    realName: "",
+    realName: "Thiago Moreirao",
     role: "Top Laner",
     nationality: "🇧🇷",
     image: "moreirao.jpg"
@@ -15,7 +15,7 @@ const lolPlayers: Player[] = [
   {
     id: "2",
     nickname: "LUCAS",
-    realName: "",
+    realName: "Lucas",
     role: "Jungler",
     nationality: "🇵🇹",
     image: "seju.jpg"
@@ -23,23 +23,22 @@ const lolPlayers: Player[] = [
   {
     id: "3",
     nickname: "DOOMA",
-    realName: "",
+    realName: "Fernando Mamede",
     role: "Mid Laner",
     nationality: "🇵🇹",
     image: "tf.jpg"
-  },
-  {
+  },{
     id: "4",
-    nickname: "RYZEN",
+    nickname: "Leazor",
     realName: "",
-    role: "ADC",
+    role: "Jungler",
     nationality: "🇵🇹",
-    image: "vayne.jpg"
+    image: "graves.jpg"
   },
   {
     id: "5",
     nickname: "ZUKANOOB",
-    realName: "",
+    realName: "Tiago Rodrigues",
     role: "Support",
     nationality: "🇧🇷",
     image: "zilean.jpg"
@@ -47,14 +46,28 @@ const lolPlayers: Player[] = [
   {
     id: "6",
     nickname: "PYKER",
-    realName: "",
+    realName: "Hebert Rodrigues",
     role: "Support",
     nationality: "🇵🇹",
     image: "pyke.jpg"
   },{
     id: "7",
     nickname: "DE",
-    realName: "",
+    realName: "Danilo Costa",
+    role: "Jungler",
+    nationality: "🇵🇹",
+    image: "graves.jpg"
+  },{
+    id: "8",
+    nickname: "DE",
+    realName: "David Almeida",
+    role: "Jungler",
+    nationality: "🇵🇹",
+    image: "graves.jpg"
+  },{
+    id: "9",
+    nickname: "",
+    realName: "Nuno Pinheiro",
     role: "Jungler",
     nationality: "🇵🇹",
     image: "graves.jpg"

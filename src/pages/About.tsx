@@ -151,11 +151,6 @@ será testemunhado por ti.</p>
               Estamos sempre à procura de novos talentos. Se tens o que é preciso 
               para competir ao mais alto nível, queremos conhecer-te.
             </p>
-            <a
-              href="/careers"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-body font-semibold uppercase tracking-wider hover:bg-primary/90 box-glow hover:box-glow-strong transition-all duration-300"
-            ></a>
-              Contactar
           </div>
         </div>
       </section>

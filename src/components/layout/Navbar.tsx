@@ -41,7 +41,7 @@ export const Navbar = () => {
               src="/waylogo.png"
               alt="Way Gaming"
               className="
-                w-20 h-20
+                w-28 h-20
                 transition-all duration-300
                 drop-shadow-[0_0_12px_rgba(0,255,200,0.6)]
                 group-hover:drop-shadow-[0_0_22px_rgba(0,255,200,0.9)]
