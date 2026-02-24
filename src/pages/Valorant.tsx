@@ -53,14 +53,14 @@ const Valorant = () => {
     <Layout>
       <TeamHeader
         title="VALORANT"
-        subtitle="Nossas Equipas"
-        description="A Way Gaming conta com duas equipas de Valorant, focadas no competitivo e integradas num modelo de Academy, onde a evolução coletiva e individual é prioridade. Cada equipa é acompanhada por coaches de equipa e individuais, garantindo desenvolvimento contínuo, disciplina e alto rendimento."
+        subtitle="Em construção..."
+        description="A Way Gaming conta com três equipas de Valorant, focadas no competitivo e integradas num modelo de Academy, onde a evolução coletiva e individual é prioridade. Cada equipa é acompanhada por coaches de equipa e individuais, garantindo desenvolvimento contínuo, disciplina e alto rendimento."
         accentColor="bg-red-500"
         icon={<Crosshair className="w-5 h-5 text-red-400" />}
       />
 
       {/* Players Section */}
-      <section className="py-24">
+      {/* <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
@@ -104,7 +104,7 @@ const Valorant = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Schedule Section */}
       {/* <section className="py-24">

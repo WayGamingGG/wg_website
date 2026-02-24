@@ -6,72 +6,58 @@ import { Gamepad2, Trophy, Calendar } from "lucide-react";
 const lolPlayers: Player[] = [
   {
     id: "1",
-    nickname: "MOREIRAOO",
+    nickname: "Moreiraooo",
     realName: "Thiago Moreirao",
     role: "Top Laner",
-    nationality: "🇧🇷",
-    image: "moreirao.jpg"
+    nationality: "",
+    image: "morderkaiser.jpg"
   },
   {
     id: "2",
     nickname: "LUCAS",
-    realName: "Lucas",
+    realName: "José Lucas",
     role: "Jungler",
-    nationality: "🇵🇹",
-    image: "seju.jpg"
+    nationality: "",
+    image: "queen.jpg"
   },
   {
     id: "3",
     nickname: "DOOMA",
-    realName: "Fernando Mamede",
+    realName: "Fernando Carvalho",
     role: "Mid Laner",
-    nationality: "🇵🇹",
-    image: "tf.jpg"
+    nationality: "",
+    image: "kassadin.jpg"
   },{
     id: "4",
     nickname: "Leazor",
-    realName: "",
-    role: "Jungler",
-    nationality: "🇵🇹",
-    image: "graves.jpg"
+    realName: "Nuno Pinheiro",
+    role: "ADC",
+    nationality: "",
+    image: "kaisa.jpg"
   },
   {
     id: "5",
     nickname: "ZUKANOOB",
-    realName: "Tiago Rodrigues",
+    realName: "Hebert Nunes",
     role: "Support",
-    nationality: "🇧🇷",
-    image: "zilean.jpg"
+    nationality: "",
+    image: "tresh.jpg"
   },
   {
     id: "6",
-    nickname: "PYKER",
-    realName: "Hebert Rodrigues",
+    nickname: "Pyker",
+    realName: "Danilo Costa",
     role: "Support",
-    nationality: "🇵🇹",
-    image: "pyke.jpg"
+    nationality: "",
+    image: "pyker.jpg"
   },{
     id: "7",
-    nickname: "DE",
-    realName: "Danilo Costa",
-    role: "Jungler",
-    nationality: "🇵🇹",
-    image: "graves.jpg"
-  },{
-    id: "8",
-    nickname: "DE",
+    nickname: "Diz coteca",
     realName: "David Almeida",
     role: "Jungler",
-    nationality: "🇵🇹",
-    image: "graves.jpg"
-  },{
-    id: "9",
-    nickname: "",
-    realName: "Nuno Pinheiro",
-    role: "Jungler",
-    nationality: "🇵🇹",
-    image: "graves.jpg"
-  },
+    nationality: "",
+    image: "gravescity.jpg"
+  }
 ];
 
 const LeagueOfLegends = () => {
