@@ -9,8 +9,8 @@ const Index = () => {
     <Layout>
       <HeroSection />
       <TeamsSection />
+      <PartnersSection />
       <NewsSection />
-      {/* <PartnersSection /> */}
     </Layout>
   );
 };
