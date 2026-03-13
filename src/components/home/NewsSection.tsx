@@ -2,6 +2,13 @@ import { Calendar } from "lucide-react";
 
 const news = [
   {
+    title: "Tryouts Valorant ",
+    excerpt: "A nossa equipa de Valorant está à procura de novos talentos! Se tens mira afiada, boa comunicação e vontade de competir, participa nos nossos tryouts e mostra do que és capaz.",
+    date: "17, 18 e 19 de Março",
+    category: "Valorant",
+    image: "/valorant.jpg"
+  },
+  {
     title: "LPLOL WINTER SPLIT 2026",
     excerpt: "Nossa equipa principal de league of legends está oficialmente qualificada para a LPLOL WINTER SPLIT 2026 ",
     date: "05 Jan 2026",
@@ -13,13 +20,7 @@ const news = [
     excerpt: "A nossa equipa participou nessas ultimas semanas do torneio Radiant Master's Cup de Valorant, onde fizemos uma boa campanha neste campeonato nacional.",
     date: "12 Dez 2025",
     category: "Valorant",
-  },
-  {
-    title: "Kaito’s Tournament",
-    excerpt: "Nossas duas equipas de League of Legends, participaram da competição Kaito’s Tournament, sediada na Alemanha, onde a nossa equipa Way Ward levou a melhor e foi campeã do torneio.",
-    date: "10 Dez 2025",
-    category: "League of Legends",
-  },
+  }
 ];
 
 export const NewsSection = () => {
