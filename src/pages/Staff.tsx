@@ -32,7 +32,7 @@ const managementStaff: StaffMember[] = [
   },
   {
     id: "6",
-    name: "JLnovo",
+    name: "Detox",
     role: "Staff Colosseum",
     description: "Responsável pela gestão da WG Colosseum.",
   }
@@ -46,7 +46,7 @@ const lolStaff: StaffMember[] = [
     description: "Gestão geral das equipas academy de league of legends.",
   },{
     id: "2",
-    name: "Alex",
+    name: "Pardal",
     role: "Manager Equipa WG League of legends",
     description: "Gestão geral da equipa principal de league of legends.",
   }
