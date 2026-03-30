@@ -29,12 +29,6 @@ const managementStaff: StaffMember[] = [
     name: "Zerphys",
     role: "Tecnico Imagem & video",
     description: "Responsável pela direção criativa e produção de conteúdos audiovisuais da organização.",
-  },
-  {
-    id: "6",
-    name: "Detox",
-    role: "Staff Colosseum",
-    description: "Responsável pela gestão da WG Colosseum.",
   }
 ];
 
@@ -49,6 +43,16 @@ const lolStaff: StaffMember[] = [
     name: "Pardal",
     role: "Manager Equipa WG League of legends",
     description: "Gestão geral da equipa principal de league of legends.",
+  },{
+    id: "3",
+    name: "Arutenev",
+    role: "Coach Equipa WG League of legends",
+    description: "Coach e análise de equipa de league of legends.",
+  },{
+    id: "4",
+    name: "Manuendo",
+    role: "Coach Equipa WG League of legends",
+    description: "Coach e análise de equipa de league of legends.",
   }
 ];
 
@@ -70,6 +74,18 @@ const valorantStaff: StaffMember[] = [
     name: "Marta",
     role: "Staff Valorant",
     description: "Responsável pelas operações diárias das equipas de valorant.",
+  },
+  {
+    id: "4",
+    name: "Zekku",
+    role: "Coach Valorant",
+    description: "Coach e análise de equipa de Valorant.",
+  },
+  {
+    id: "5",
+    name: "Cris",
+    role: "Coach Valorant",
+    description: "Coach e análise de equipa de Valorant.",
   }
 ];
 
