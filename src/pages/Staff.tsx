@@ -45,7 +45,7 @@ const lolStaff: StaffMember[] = [
     description: "Gestão geral da equipa principal de league of legends.",
   },{
     id: "3",
-    name: "Arutenev",
+    name: "Arutnev",
     role: "Coach Equipa WG League of legends",
     description: "Coach e análise de equipa de league of legends.",
   },{
@@ -59,30 +59,24 @@ const lolStaff: StaffMember[] = [
 const valorantStaff: StaffMember[] = [
    {
     id: "1",
-    name: "Phantom",
+    name: "Conde",
     role: "Manager Valorant",
     description: "Responsável pelas operações diárias da organização e gestão geral das equipas de valorant.",
   },
   {
     id: "2",
-    name: "Nixie",
-    role: "Staff Valorant Feminino",
-    description: "Responsável pelas operações diárias das equipas de valorant.",
-  },
-  {
-    id: "3",
     name: "Marta",
     role: "Staff Valorant",
     description: "Responsável pelas operações diárias das equipas de valorant.",
   },
   {
-    id: "4",
+    id: "3",
     name: "Zekku",
     role: "Coach Valorant",
     description: "Coach e análise de equipa de Valorant.",
   },
   {
-    id: "5",
+    id: "4",
     name: "Cris",
     role: "Coach Valorant",
     description: "Coach e análise de equipa de Valorant.",
