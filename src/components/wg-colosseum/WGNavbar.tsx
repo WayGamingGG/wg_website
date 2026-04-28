@@ -2,18 +2,22 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const navLinks = [
-  { name: "Início", href: "/wg-colosseum" },
-  { name: "Equipas", href: "/wg-colosseum/equipas" },
-  { name: "Classificação", href: "/wg-colosseum/classificacao" },
-  { name: "Calendário", href: "/wg-colosseum/calendario" },
-  { name: "Regras", href: "/wg-colosseum/regras" },
-];
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export const WGNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
+
+  const navLinks = [
+    { name: t('wgColosseum.navHome'), href: "/wg-colosseum" },
+    { name: t('wgColosseum.navTeams'), href: "/wg-colosseum/equipas" },
+    { name: t('wgColosseum.navStandings'), href: "/wg-colosseum/classificacao" },
+    { name: t('wgColosseum.navSchedule'), href: "/wg-colosseum/calendario" },
+    { name: t('wgColosseum.navRules'), href: "/wg-colosseum/regras" },
+    { name: t('wgColosseum.navDonations'), href: "/wg-colosseum/donations" },
+  ];
 
   const isActive = (href: string) => {
     if (href === "/wg-colosseum") {
@@ -40,12 +44,10 @@ export const WGNavbar = () => {
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
-                key={link.name}
+                key={link.href}
                 to={link.href}
                 className={`text-sm font-semibold transition-colors ${
-                  isActive(link.href)
-                    ? "text-violet-400"
-                    : "text-gray-400 hover:text-white"
+                  isActive(link.href) ? "text-violet-400" : "text-gray-400 hover:text-white"
                 }`}
               >
                 {link.name}
@@ -53,23 +55,24 @@ export const WGNavbar = () => {
             ))}
           </div>
 
-          {/* Back to Home */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* Back to Home + Language */}
+          <div className="hidden md:flex items-center gap-3">
+            <LanguageSwitcher />
             <Link to="/">
               <Button variant="outline" size="sm" className="border-violet-500/30 text-violet-400 hover:bg-violet-500/10">
                 <Home className="w-4 h-4 mr-2" />
-                Voltar
+                {t('wgColosseum.navBack')}
               </Button>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex md:hidden items-center gap-3">
+            <LanguageSwitcher />
+            <button className="text-white" onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -78,12 +81,10 @@ export const WGNavbar = () => {
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.href}
                   to={link.href}
                   className={`text-lg font-semibold transition-colors ${
-                    isActive(link.href)
-                      ? "text-violet-400"
-                      : "text-gray-400"
+                    isActive(link.href) ? "text-violet-400" : "text-gray-400"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -96,7 +97,7 @@ export const WGNavbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <Home className="w-4 h-4" />
-                Voltar ao Início
+                {t('wgColosseum.navBackToHome')}
               </Link>
             </div>
           </div>

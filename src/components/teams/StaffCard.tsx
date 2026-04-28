@@ -24,9 +24,11 @@ export const StaffCard = ({ member, accentColor = "from-primary/20" }: StaffCard
         {/* Avatar */}
         <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center border-2 border-border group-hover:border-primary/50 transition-colors">
           {member.image ? (
-            <img 
-              src={member.image} 
+            <img
+              src={member.image}
               alt={member.name}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full rounded-full object-cover"
             />
           ) : (

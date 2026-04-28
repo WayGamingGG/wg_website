@@ -28,8 +28,10 @@ export const PlayerCard = ({ player, accentColor = "from-primary/20" }: PlayerCa
         <div className="absolute inset-0">
           {player.image ? (
             <img
-              src={`/players/${player.image}`}
+              src={player.image?.startsWith('/') ? player.image : `/players/${player.image}`}
               alt={player.nickname}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-500"
             />
           ) : (

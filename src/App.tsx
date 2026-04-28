@@ -21,6 +21,8 @@ import WGTeams from "./components/wg-colosseum/WGTeams";
 import WGSchedule from "./components/wg-colosseum/WGSchedule";
 import WGStandings from "./components/wg-colosseum/WGStandings";
 import WGRules from "./components/wg-colosseum/WGRules";
+import Donations from "./pages/Donations";
+import WGDonations from "./components/wg-colosseum/WGDonations";
 
 
 const queryClient = new QueryClient();
@@ -42,6 +44,7 @@ const App = () => (
             <Route path="staff" element={<Staff />} />
             <Route path="careers" element={<Careers />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="donations" element={<Donations />} />
             <Route path="store" element={<Store />} />
             <Route path="store/product/:handle" element={<ProductDetail />} />
             <Route path="wg-colosseum" element={<WGIndex />} />
@@ -49,6 +52,7 @@ const App = () => (
             <Route path="wg-colosseum/classificacao" element={<WGStandings />} />
             <Route path="wg-colosseum/calendario" element={<WGSchedule />} />
             <Route path="wg-colosseum/regras" element={<WGRules />} />
+            <Route path="wg-colosseum/donations" element={<WGDonations />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </HashRouter>

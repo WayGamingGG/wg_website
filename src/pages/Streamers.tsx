@@ -1,6 +1,9 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Twitch, Youtube, Twitter, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+import { SEO_LOGO, SEO_SITE_NAME, SEO_TWITTER } from "@/lib/seo";
 
 interface Streamer {
   id: string;
@@ -18,15 +21,14 @@ interface Streamer {
   };
 }
 
-const streamers: Streamer[] = [
+const streamersMeta = [
   {
     id: "1",
     name: "Beatriz Mendes",
     nickname: "BeaPlays",
-    platform: "twitch",
+    platform: "twitch" as const,
     game: "Variety",
     followers: "45K",
-    description: "Streamer de variety gaming com foco em jogos indie e interação com a comunidade. Streams diários às 20h.",
     socials: {
       twitch: "https://twitch.tv/beaplays",
       twitter: "https://twitter.com/beaplays",
@@ -37,10 +39,9 @@ const streamers: Streamer[] = [
     id: "2",
     name: "Marco Silva",
     nickname: "MarcoFPS",
-    platform: "twitch",
+    platform: "twitch" as const,
     game: "Valorant",
     followers: "78K",
-    description: "Ex-jogador profissional de CS:GO agora focado em Valorant. Conteúdo educativo e ranked grind.",
     socials: {
       twitch: "https://twitch.tv/marcofps",
       youtube: "https://youtube.com/marcofps",
@@ -51,10 +52,9 @@ const streamers: Streamer[] = [
     id: "3",
     name: "Ana Ferreira",
     nickname: "AnaLoL",
-    platform: "twitch",
+    platform: "twitch" as const,
     game: "League of Legends",
     followers: "120K",
-    description: "Challenger na EUW, especialista em Mid Lane. Coaching streams às quartas e domingos.",
     socials: {
       twitch: "https://twitch.tv/analol",
       youtube: "https://youtube.com/analol",
@@ -66,10 +66,9 @@ const streamers: Streamer[] = [
     id: "4",
     name: "Pedro Costa",
     nickname: "PedroGames",
-    platform: "youtube",
+    platform: "youtube" as const,
     game: "Variety",
     followers: "200K",
-    description: "Criador de conteúdo focado em vídeos de entretenimento e gameplay. Conhecido pelos vídeos de challenge.",
     socials: {
       youtube: "https://youtube.com/pedrogames",
       twitter: "https://twitter.com/pedrogames",
@@ -80,10 +79,9 @@ const streamers: Streamer[] = [
     id: "5",
     name: "Sofia Alves",
     nickname: "SofiaPlays",
-    platform: "twitch",
+    platform: "twitch" as const,
     game: "Just Chatting",
     followers: "85K",
-    description: "Streams de Just Chatting, reacts e gaming casual. Comunidade acolhedora e positiva.",
     socials: {
       twitch: "https://twitch.tv/sofiaplays",
       twitter: "https://twitter.com/sofiaplays",
@@ -94,10 +92,9 @@ const streamers: Streamer[] = [
     id: "6",
     name: "Rui Santos",
     nickname: "RuiVAL",
-    platform: "twitch",
+    platform: "twitch" as const,
     game: "Valorant",
     followers: "55K",
-    description: "Radiant player com foco em agentes de entrada. Streams de ranked e análise de gameplay.",
     socials: {
       twitch: "https://twitch.tv/ruival",
       youtube: "https://youtube.com/ruival",
@@ -110,7 +107,7 @@ const StreamerCard = ({ streamer }: { streamer: Streamer }) => {
   return (
     <div className="group relative bg-card rounded-xl border border-border overflow-hidden hover:border-primary/50 transition-all duration-300">
       <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      
+
       <div className="relative p-6">
         {/* Platform Badge */}
         <div className="absolute top-4 right-4">
@@ -134,20 +131,14 @@ const StreamerCard = ({ streamer }: { streamer: Streamer }) => {
 
         {/* Info */}
         <div className="text-center mb-4">
-          <h3 className="font-display text-xl font-bold text-foreground mb-1">
-            {streamer.nickname}
-          </h3>
-          <p className="font-body text-sm text-muted-foreground mb-2">
-            {streamer.name}
-          </p>
+          <h3 className="font-display text-xl font-bold text-foreground mb-1">{streamer.nickname}</h3>
+          <p className="font-body text-sm text-muted-foreground mb-2">{streamer.name}</p>
           <div className="flex items-center justify-center gap-2 mb-3">
             <span className="px-2 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full">
               {streamer.game}
             </span>
           </div>
-          <p className="font-body text-sm text-muted-foreground line-clamp-3">
-            {streamer.description}
-          </p>
+          <p className="font-body text-sm text-muted-foreground line-clamp-3">{streamer.description}</p>
         </div>
 
         {/* Social Links */}
@@ -199,8 +190,29 @@ const StreamerCard = ({ streamer }: { streamer: Streamer }) => {
 };
 
 const Streamers = () => {
+  const { t } = useTranslation();
+  const descriptions = t('streamers.descriptions', { returnObjects: true }) as string[];
+
+  const streamers: Streamer[] = streamersMeta.map((s, i) => ({
+    ...s,
+    description: descriptions[i] ?? "",
+  }));
+
   return (
     <Layout>
+      <Helmet>
+        <title>Streamers — WayGaming Esports</title>
+        <meta name="description" content="Conhece os criadores de conteúdo que representam a WayGaming. Entretenimento, gameplay de alto nível e uma comunidade incrível." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SEO_SITE_NAME} />
+        <meta property="og:title" content="Streamers — WayGaming Esports" />
+        <meta property="og:description" content="Conhece os criadores de conteúdo que representam a WayGaming. Entretenimento, gameplay de alto nível e uma comunidade incrível." />
+        <meta property="og:image" content={SEO_LOGO} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={SEO_TWITTER} />
+        <meta name="twitter:title" content="Streamers — WayGaming Esports" />
+        <meta name="twitter:image" content={SEO_LOGO} />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 via-background to-background" />
@@ -209,14 +221,15 @@ const Streamers = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 rounded-full mb-6">
               <Twitch className="w-5 h-5 text-purple-400" />
               <span className="font-body text-sm font-semibold text-purple-400 uppercase tracking-wider">
-                Criadores de Conteúdo
+                {t('streamers.badge')}
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-6">
-              NOSSOS <span className="text-primary text-glow">STREAMERS</span>
+              {t('streamers.title').split(' ').slice(0, -1).join(' ')}{' '}
+              <span className="text-primary text-glow">{t('streamers.title').split(' ').slice(-1)}</span>
             </h1>
             <p className="font-body text-xl text-muted-foreground max-w-2xl mx-auto">
-              Conhece os criadores de conteúdo que representam a WayGaming. Entretenimento, gameplay de alto nível e uma comunidade incrível.
+              {t('streamers.subtitle')}
             </p>
           </div>
         </div>
@@ -238,14 +251,15 @@ const Streamers = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              QUERES SER UM <span className="text-primary">WAY STREAMER</span>?
+              {t('streamers.ctaTitle').split(' ').slice(0, -2).join(' ')}{' '}
+              <span className="text-primary">{t('streamers.ctaTitle').split(' ').slice(-2).join(' ')}</span>
             </h2>
             <p className="font-body text-muted-foreground mb-8">
-              Estamos sempre à procura de novos talentos para se juntarem à nossa equipa de criadores de conteúdo.
+              {t('streamers.ctaDescription')}
             </p>
             <Button variant="default" size="lg" asChild>
               <a href="https://discord.com/users/1284567243379966036" target="_blank" rel="noopener noreferrer">
-                Candidata-te Agora
+                {t('streamers.ctaButton')}
               </a>
             </Button>
           </div>

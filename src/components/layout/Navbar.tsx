@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Gamepad2, ChevronDown, Home } from "lucide-react";
+import { Menu, X, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { CartDrawer } from "@/components/store/CartDrawer";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 import {
   DropdownMenu,
@@ -11,25 +12,27 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 const esportsLinks = [
   { name: "League of Legends", path: "/league-of-legends" },
   { name: "Valorant", path: "/valorant" },
 ];
 
-const navLinks = [
-  { name: "About", path: "/about" },
-  { name: "Streamers", path: "/streamers" },
-  { name: "Equipa", path: "/staff" },
-  { name: "Carreiras", path: "/careers" },
-  { name: "Contactos", path: "/contact" },
-];
-
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [esportsOpen, setEsportsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
   const isEsportsActive = esportsLinks.some(link => location.pathname === link.path);
+
+  const navLinks = [
+    { name: t('nav.streamers'), path: "/streamers" },
+    { name: t('nav.team'), path: "/staff" },
+    { name: t('nav.careers'), path: "/careers" },
+    { name: t('nav.contacts'), path: "/contact" },
+    { name: t('nav.donations'), path: "/donations" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
@@ -54,7 +57,6 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-1">
-            {/* About Link */}
             <Link
               to="/about"
               className={cn(
@@ -64,10 +66,9 @@ export const Navbar = () => {
                   : "text-muted-foreground hover:text-foreground hover:bg-secondary"
               )}
             >
-              Sobre nós
+              {t('nav.aboutUs')}
             </Link>
 
-            {/* E-Sports Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button
@@ -78,7 +79,7 @@ export const Navbar = () => {
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                   )}
                 >
-                  E-Sports
+                  {t('nav.esports')}
                   <ChevronDown className="w-4 h-4" />
                 </button>
               </DropdownMenuTrigger>
@@ -101,8 +102,7 @@ export const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Other Nav Links */}
-            {navLinks.slice(2).map((link) => (
+            {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -117,27 +117,21 @@ export const Navbar = () => {
               </Link>
             ))}
           </div>
-          
-          {/* Button back */}
+
+          {/* Right side: language switcher + back button */}
           <div className="hidden md:flex items-center gap-3">
+            <LanguageSwitcher />
             <Link to="/">
               <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
                 <Home className="w-4 h-4 mr-2" />
-                Voltar
+                {t('nav.back')}
               </Button>
             </Link>
           </div>
-          {/* CTA Button & Cart */}
-          {/* <div className="hidden md:flex items-center gap-3">
-            <CartDrawer />
-            <Button variant="outline" size="sm">
-              Join Us
-            </Button>
-          </div> */}
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-3">
-            {/* <CartDrawer /> */}
+            <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-foreground"
@@ -160,15 +154,14 @@ export const Navbar = () => {
                   : "text-muted-foreground hover:text-foreground hover:bg-secondary"
               )}
             >
-              About
+              {t('nav.aboutUs')}
             </Link>
-            
-            {/* Mobile E-Sports Section */}
+
             <button
               onClick={() => setEsportsOpen(!esportsOpen)}
               className="w-full flex items-center justify-between px-4 py-3 font-body text-sm font-semibold uppercase tracking-wider text-muted-foreground hover:text-foreground hover:bg-secondary"
             >
-              E-Sports
+              {t('nav.esports')}
               <ChevronDown className={cn("w-4 h-4 transition-transform", esportsOpen && "rotate-180")} />
             </button>
             {esportsOpen && (
@@ -191,7 +184,7 @@ export const Navbar = () => {
               </div>
             )}
 
-            {navLinks.slice(2).map((link) => (
+            {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -208,7 +201,7 @@ export const Navbar = () => {
             ))}
             <div className="px-4 pt-4">
               <Button variant="outline" className="w-full">
-                Join Us
+                {t('common.joinUs')}
               </Button>
             </div>
           </div>

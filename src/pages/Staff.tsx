@@ -1,91 +1,59 @@
+import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
-import { StaffCard, StaffMember } from "@/components/teams/StaffCard";
-import { Users, Briefcase, Target, Brain } from "lucide-react";
+import { StaffCard } from "@/components/teams/StaffCard";
+import { Users, Briefcase, Target } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { SEO_LOGO, SEO_SITE_NAME, SEO_TWITTER } from "@/lib/seo";
 
-const managementStaff: StaffMember[] = [
-  {
-    id: "1",
-    name: "Sparta",
-    role: "CEO & Fundador",
-    description: "Presidente e fundador da WayGaming.",
-  },
-  {
-    id: "2",
-    name: "Luana",
-    role: "Staff Senior WG",
-    description: "Responsável pela coordenação e supervisão das operações globais da organização.",
-  },{
-    id: "3",
-    name: "Portuga",
-    role: "Staff League of legends",
-    description: "Responsável pelas operações diárias da organização.",
-  },{
-    id: "4",
-    name: "BoKa",
-    role: "Software Develop",
-    description: "Responsável pelo desenvolvimento e manutenção das soluções tecnológicas da organização.",
-  },{
-    id: "5",
-    name: "Zerphys",
-    role: "Tecnico Imagem & video",
-    description: "Responsável pela direção criativa e produção de conteúdos audiovisuais da organização.",
-  }
-];
-
-const lolStaff: StaffMember[] = [
-  {
-    id: "1",
-    name: "Rumival",
-    role: "Manager Academy League of legends",
-    description: "Gestão geral das equipas academy de league of legends.",
-  },{
-    id: "2",
-    name: "Pardal",
-    role: "Manager Equipa WG League of legends",
-    description: "Gestão geral da equipa principal de league of legends.",
-  },{
-    id: "3",
-    name: "Arutnev",
-    role: "Coach Equipa WG League of legends",
-    description: "Coach e análise de equipa de league of legends.",
-  },{
-    id: "4",
-    name: "Manuendo",
-    role: "Coach Equipa WG League of legends",
-    description: "Coach e análise de equipa de league of legends.",
-  }
-];
-
-const valorantStaff: StaffMember[] = [
-   {
-    id: "1",
-    name: "Conde",
-    role: "Manager Valorant",
-    description: "Responsável pelas operações diárias da organização e gestão geral das equipas de valorant.",
-  },
-  {
-    id: "2",
-    name: "Marta",
-    role: "Staff Valorant",
-    description: "Responsável pelas operações diárias das equipas de valorant.",
-  },
-  {
-    id: "3",
-    name: "Zekku",
-    role: "Coach Valorant",
-    description: "Coach e análise de equipa de Valorant.",
-  },
-  {
-    id: "4",
-    name: "Cris",
-    role: "Coach Valorant",
-    description: "Coach e análise de equipa de Valorant.",
-  }
-];
+const staffNames = {
+  management: ["Sparta", "Luana", "Portuga", "BoKa", "Zerphys", "Senju"],
+  lol: ["Rumival", "Pardal", "Arutnev", "Manuendo"],
+  valorant: ["Conde", "Marta", "Zekku", "Cris"],
+};
 
 const Staff = () => {
+  const { t } = useTranslation();
+
+  const managementTranslated = t('staff.management', { returnObjects: true }) as Array<{ role: string; description: string }>;
+  const lolTranslated = t('staff.lol', { returnObjects: true }) as Array<{ role: string; description: string }>;
+  const valorantTranslated = t('staff.valorant', { returnObjects: true }) as Array<{ role: string; description: string }>;
+
+  const managementStaff = staffNames.management.map((name, i) => ({
+    id: String(i + 1),
+    name,
+    role: managementTranslated[i]?.role ?? "",
+    description: managementTranslated[i]?.description ?? "",
+  }));
+
+  const lolStaff = staffNames.lol.map((name, i) => ({
+    id: String(i + 1),
+    name,
+    role: lolTranslated[i]?.role ?? "",
+    description: lolTranslated[i]?.description ?? "",
+  }));
+
+  const valorantStaff = staffNames.valorant.map((name, i) => ({
+    id: String(i + 1),
+    name,
+    role: valorantTranslated[i]?.role ?? "",
+    description: valorantTranslated[i]?.description ?? "",
+  }));
+
   return (
     <Layout>
+      <Helmet>
+        <title>Staff — WayGaming Esports</title>
+        <meta name="description" content="Conhece a equipa por trás da WayGaming. Os profissionais dedicados que trabalham para alcançar a excelência competitiva." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SEO_SITE_NAME} />
+        <meta property="og:title" content="Staff — WayGaming Esports" />
+        <meta property="og:description" content="Conhece a equipa por trás da WayGaming. Os profissionais dedicados que trabalham para alcançar a excelência competitiva." />
+        <meta property="og:image" content={SEO_LOGO} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={SEO_TWITTER} />
+        <meta name="twitter:title" content="Staff — WayGaming Esports" />
+        <meta name="twitter:image" content={SEO_LOGO} />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background to-background" />
@@ -94,14 +62,15 @@ const Staff = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full mb-6">
               <Users className="w-5 h-5 text-primary" />
               <span className="font-body text-sm font-semibold text-primary uppercase tracking-wider">
-                A Nossa Família
+                {t('staff.badge')}
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-6">
-              CONHEÇA A <span className="text-primary text-glow">STAFF</span>
+              {t('staff.title').split(' ').slice(0, -1).join(' ')}{' '}
+              <span className="text-primary text-glow">{t('staff.title').split(' ').slice(-1)}</span>
             </h1>
             <p className="font-body text-xl text-muted-foreground max-w-2xl mx-auto">
-              Conhece as pessoas por trás do sucesso das nossas equipas. Profissionais dedicados que trabalham incansavelmente para alcançar a excelência.
+              {t('staff.subtitle')}
             </p>
           </div>
         </div>
@@ -115,8 +84,8 @@ const Staff = () => {
               <Briefcase className="w-8 h-8 text-primary" />
             </div>
             <div>
-              <h2 className="font-display text-3xl font-bold">GESTÃO</h2>
-              <p className="font-body text-muted-foreground">Liderança e direção estratégica</p>
+              <h2 className="font-display text-3xl font-bold">{t('staff.managementTitle')}</h2>
+              <p className="font-body text-muted-foreground">{t('staff.managementSubtitle')}</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -135,8 +104,8 @@ const Staff = () => {
               <Target className="w-8 h-8 text-blue-400" />
             </div>
             <div>
-              <h2 className="font-display text-3xl font-bold">LEAGUE OF LEGENDS</h2>
-              <p className="font-body text-muted-foreground">Staff técnico da equipa de LoL</p>
+              <h2 className="font-display text-3xl font-bold">{t('staff.lolTitle')}</h2>
+              <p className="font-body text-muted-foreground">{t('staff.lolSubtitle')}</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -155,8 +124,8 @@ const Staff = () => {
               <Target className="w-8 h-8 text-accent" />
             </div>
             <div>
-              <h2 className="font-display text-3xl font-bold">VALORANT</h2>
-              <p className="font-body text-muted-foreground">Staff técnico da equipa de Valorant</p>
+              <h2 className="font-display text-3xl font-bold">{t('staff.valorantTitle')}</h2>
+              <p className="font-body text-muted-foreground">{t('staff.valorantSubtitle')}</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

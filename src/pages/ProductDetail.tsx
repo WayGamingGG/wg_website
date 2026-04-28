@@ -7,6 +7,7 @@ import { fetchProductByHandle, ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { ShoppingCart, Loader2, ArrowLeft, Minus, Plus } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ProductDetail = () => {
   const { handle } = useParams<{ handle: string }>();
@@ -15,13 +16,14 @@ const ProductDetail = () => {
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
-  
+  const { t } = useTranslation();
+
   const addItem = useCartStore(state => state.addItem);
 
   useEffect(() => {
     const loadProduct = async () => {
       if (!handle) return;
-      
+
       try {
         const fetchedProduct = await fetchProductByHandle(handle);
         setProduct(fetchedProduct);
@@ -50,12 +52,12 @@ const ProductDetail = () => {
       <Layout>
         <div className="min-h-screen flex flex-col items-center justify-center">
           <h1 className="font-display text-2xl font-bold text-foreground mb-4">
-            Produto não encontrado
+            {t('productDetail.notFound')}
           </h1>
           <Link to="/store">
             <Button variant="outline">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Voltar à loja
+              {t('productDetail.backToStore')}
             </Button>
           </Link>
         </div>
@@ -71,9 +73,7 @@ const ProductDetail = () => {
   const handleAddToCart = () => {
     if (!selectedVariant) return;
 
-    const shopifyProduct: ShopifyProduct = {
-      node: product
-    };
+    const shopifyProduct: ShopifyProduct = { node: product };
 
     addItem({
       product: shopifyProduct,
@@ -81,28 +81,31 @@ const ProductDetail = () => {
       variantTitle: selectedVariant.title,
       price: selectedVariant.price,
       quantity,
-      selectedOptions: selectedVariant.selectedOptions || []
+      selectedOptions: selectedVariant.selectedOptions || [],
     });
 
-    toast.success("Adicionado ao carrinho", {
+    toast.success(t('productDetail.addedToCart'), {
       description: `${quantity}x ${product.title}`,
-      position: "top-center"
+      position: "top-center",
     });
   };
 
   return (
     <Layout>
       <Helmet>
-        <title>{product.title} | NexusGG Store</title>
-        <meta name="description" content={product.description || `Compre ${product.title} na loja oficial NexusGG`} />
+        <title>{product.title} | WayGaming Store</title>
+        <meta name="description" content={product.description || product.title} />
       </Helmet>
 
       <section className="pt-28 pb-20">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
-          <Link to="/store" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8">
+          <Link
+            to="/store"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8"
+          >
             <ArrowLeft className="w-4 h-4" />
-            Voltar à loja
+            {t('productDetail.backToStore')}
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -113,6 +116,8 @@ const ProductDetail = () => {
                   <img
                     src={images[selectedImage].node.url}
                     alt={images[selectedImage].node.altText || product.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 ) : (
@@ -121,7 +126,7 @@ const ProductDetail = () => {
                   </div>
                 )}
               </div>
-              
+
               {images.length > 1 && (
                 <div className="flex gap-2 overflow-x-auto pb-2">
                   {images.map((img, index) => (
@@ -135,6 +140,8 @@ const ProductDetail = () => {
                       <img
                         src={img.node.url}
                         alt={img.node.altText || `${product.title} ${index + 1}`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </button>
@@ -155,9 +162,7 @@ const ProductDetail = () => {
               </div>
 
               {product.description && (
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  {product.description}
-                </p>
+                <p className="text-muted-foreground text-lg leading-relaxed">{product.description}</p>
               )}
 
               {/* Variants */}
@@ -170,12 +175,12 @@ const ProductDetail = () => {
                       </label>
                       <div className="flex flex-wrap gap-2">
                         {option.values.map((value) => {
-                          const variantIndex = variants.findIndex(v => 
+                          const variantIndex = variants.findIndex(v =>
                             v.node.selectedOptions.some(o => o.name === option.name && o.value === value)
                           );
                           const isSelected = selectedVariantIndex === variantIndex;
                           const variant = variants[variantIndex]?.node;
-                          
+
                           return (
                             <button
                               key={value}
@@ -202,7 +207,7 @@ const ProductDetail = () => {
               {/* Quantity */}
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
-                  Quantidade
+                  {t('productDetail.quantity')}
                 </label>
                 <div className="flex items-center gap-3">
                   <Button
@@ -232,7 +237,7 @@ const ProductDetail = () => {
                 className="w-full gap-3"
               >
                 <ShoppingCart className="w-5 h-5" />
-                {selectedVariant?.availableForSale ? "Adicionar ao Carrinho" : "Esgotado"}
+                {selectedVariant?.availableForSale ? t('productDetail.addToCart') : t('productDetail.soldOut')}
               </Button>
             </div>
           </div>
