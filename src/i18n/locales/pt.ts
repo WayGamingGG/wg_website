@@ -228,6 +228,7 @@ const pt = {
       { role: "Manager Equipa WG League of legends", description: "Gestão geral da equipa principal de league of legends." },
       { role: "Coach Equipa WG League of legends", description: "Coach e análise de equipa de league of legends." },
       { role: "Coach Equipa WG League of legends", description: "Coach e análise de equipa de league of legends." },
+      { role: "Assistente Manager", description: "Gestão geral da Elite e School de league of legends." }
     ],
     valorant: [
       { role: "Manager Valorant", description: "Responsável pelas operações diárias da organização e gestão geral das equipas de valorant." },

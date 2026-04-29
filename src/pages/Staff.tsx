@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 import { SEO_LOGO, SEO_SITE_NAME, SEO_TWITTER } from "@/lib/seo";
 
 const staffNames = {
-  management: ["Sparta", "Luana", "Portuga", "BoKa", "Zerphys", "Senju"],
-  lol: ["Rumival", "Pardal", "Arutnev", "Manuendo"],
+  management: ["Sparta", "Luana", "Portuga", "BoKa", "Zerphys"],
+  lol: ["Rumival", "Pardal", "Arutnev", "Manuendo", "Senju"],
   valorant: ["Conde", "Marta", "Zekku", "Cris"],
 };
 

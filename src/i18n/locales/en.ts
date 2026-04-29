@@ -228,6 +228,7 @@ const en = {
       { role: "WG League of Legends Team Manager", description: "General management of the main League of Legends team." },
       { role: "WG League of Legends Team Coach", description: "Coach and analyst for the League of Legends team." },
       { role: "WG League of Legends Team Coach", description: "Coach and analyst for the League of Legends team." },
+      { role: "Assistant Manager", description: "General management of the League of Legends academy teams." }
     ],
     valorant: [
       { role: "Valorant Manager", description: "Responsible for the organization's day-to-day operations and general management of Valorant teams." },
