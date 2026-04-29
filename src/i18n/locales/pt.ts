@@ -259,6 +259,10 @@ const pt = {
       "A Way Gaming conta com sua equipa principal de League of Legends, focadas no competitivo nacional e internacional. Temos uma estrutura integrada num modelo de Academy, onde a evolução coletiva e individual é prioridade. Cada equipa é acompanhada por coaches de equipa e individuais, garantindo desenvolvimento contínuo, disciplina e alto rendimento.",
     sectionTitle: "WAY GAMING",
     sectionSubtitle: "We are a Voice, not an Echo",
+    tabAcademy: "Master",
+    tabMain: "Elite",
+    tabSchool: "School",
+    comingSoonDesc: "Esta secção está a ser preparada. Fica atento às novidades!",
   },
   valorant: {
     subtitle: "Três equipas. Uma organização. Alta performance.",
@@ -267,6 +271,10 @@ const pt = {
     sectionSubtitle: "Conhece os jogadores que representam a WayGaming",
     coachLabel: "Coach",
     femaleTeamBadge: "Equipa Feminina",
+    tabValquiria: "Way Valquíria",
+    tabMaster: "Way Master",
+    tabSchool: "School",
+    comingSoonDesc: "Esta secção está a ser preparada. Fica atento às novidades!",
   },
   store: {
     title: "LOJA OFICIAL",
@@ -298,7 +306,7 @@ const pt = {
     navRules: "Regras",
     navBack: "Voltar",
     navBackToHome: "Voltar ao Início",
-    navDonations: "Donações",
+    navDonations: "Donativos",
   },
   notFound: {
     title: "Página não encontrada",
@@ -320,6 +328,11 @@ const pt = {
     ],
     closingTitle: "JUNTOS SOMOS MAIS FORTES",
     closingText: "Cada contribuição, por mais pequena que seja, ajuda-nos a manter a estrutura, apoiar os atletas e continuar a crescer. Obrigado por acreditares na Way Gaming.",
+    bankTransferBtn: "Transferência Bancária",
+    bankTransferTitle: "Dados para Transferência",
+    bankTransferHolder: "Titular",
+    bankTransferCopy: "Copiar",
+    bankTransferCopied: "Copiado!",
   },
   cart: {
     title: "Carrinho",

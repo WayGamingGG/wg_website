@@ -259,6 +259,10 @@ const en = {
       "Way Gaming fields its main League of Legends team, focused on national and international competition. We have a structure integrated into an Academy model, where collective and individual evolution is a priority. Each team is accompanied by team and individual coaches, ensuring continuous development, discipline, and high performance.",
     sectionTitle: "WAY GAMING",
     sectionSubtitle: "We are a Voice, not an Echo",
+    tabAcademy: "Academy",
+    tabMain: "Way Gaming",
+    tabSchool: "School",
+    comingSoonDesc: "This section is being prepared. Stay tuned for updates!",
   },
   valorant: {
     subtitle: "Three teams. One organization. High performance.",
@@ -267,6 +271,10 @@ const en = {
     sectionSubtitle: "Meet the players representing WayGaming",
     coachLabel: "Coach",
     femaleTeamBadge: "Female Team",
+    tabValquiria: "Way Valquíria",
+    tabMaster: "Way Master",
+    tabSchool: "School",
+    comingSoonDesc: "This section is being prepared. Stay tuned for updates!",
   },
   store: {
     title: "OFFICIAL STORE",
@@ -320,6 +328,11 @@ const en = {
     ],
     closingTitle: "TOGETHER WE ARE STRONGER",
     closingText: "Every contribution, no matter how small, helps us maintain our structure, support our athletes, and keep growing. Thank you for believing in Way Gaming.",
+    bankTransferBtn: "Bank Transfer",
+    bankTransferTitle: "Bank Transfer Details",
+    bankTransferHolder: "Account Holder",
+    bankTransferCopy: "Copy",
+    bankTransferCopied: "Copied!",
   },
   cart: {
     title: "Cart",
