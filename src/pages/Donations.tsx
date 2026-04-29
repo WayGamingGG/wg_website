@@ -16,7 +16,7 @@ import { SEO_LOGO, SEO_SITE_NAME, SEO_TWITTER } from "@/lib/seo";
 const PATREON_URL = "https://www.patreon.com/14500946/join";
 
 const BANK_DETAILS = [
-  { label: "donations.bankTransferHolder", value: "Emanuel Lourenco Ferreira trading as The Way Talk" },
+  { label: "donations.bankTransferHolder", value: "The Way Talk Ltd" },
   { label: "IBAN",                         value: "GB35MONZ04000362989557" },
   { label: "BIC",                          value: "MONZGB2L" },
 ];

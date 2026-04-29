@@ -29,10 +29,6 @@ const alphaPlayers: Player[] = [
   { id: "a7", nickname: "hollow",         realName: "", role: "Sentinel",   nationality: "", image: `${V}Deadlock.png`  },
 ];
 
-const alphaCoach: Player = {
-  id: "ac1", nickname: "MinizEni", realName: "MinizEni#EG1", role: "Coach", nationality: "", image: undefined,
-};
-
 const valquiriaPlayers: Player[] = [
   { id: "v1", nickname: "Bunny",           realName: "", role: "Duelist",    nationality: "", image: `${V}Miks.png`      },
   { id: "v2", nickname: "champagne mami",  realName: "", role: "Duelist",    nationality: "", image: `${V}Jett.jpg`      },
@@ -143,7 +139,6 @@ const Valorant = () => {
                         <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">
                           {t('valorant.coachLabel')}
                         </p>
-                        <p className="font-display text-lg font-bold">{alphaCoach.nickname}</p>
                       </div>
                     </div>
                   </div>
