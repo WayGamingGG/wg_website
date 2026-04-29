@@ -27,7 +27,7 @@ const pt = {
     footerTermsOfService: "Terms of Service",
     footerDesc: "Somos uma organização de esports dedicada à excelência competitiva e ao desenvolvimento de talentos.",
     footerCopyright: "© {{year}} WayGaming. Todos os direitos reservados.",
-    donations: "Donações",
+    donations: "Donativos",
   },
   splash: {
     subtitle: "Seleciona uma das nossas plataformas",
