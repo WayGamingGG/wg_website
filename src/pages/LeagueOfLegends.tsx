@@ -31,7 +31,15 @@ const lolTeams: LolTeam[] = [
   },
   {
     name: "Spirit",
-    players: [],
+    players: [
+      { id: "s1", nickname: "fournauti",       realName: "Emanuel Ferreira",  role: "Top Laner",  nationality: "", image: "Gnar.jpg" },
+      { id: "s2", nickname: "Thunder Marks",   realName: "Felix Monteiro",    role: "Jungler",    nationality: "", image: "Vi.jpg" },
+      { id: "s3", nickname: "DIDZ TO MASTER",  realName: "Diogo Figueiredo",  role: "Jungler",    nationality: "", image: "Kayn.jpg" },
+      { id: "s4", nickname: "gui",             realName: "Guilherme Azevedo", role: "Mid Laner",  nationality: "", image: "Swain.jpg" },
+      { id: "s5", nickname: "jjira",           realName: "Pedro Martins",     role: "ADC",        nationality: "", image: "Yunara.jpg" },
+      { id: "s6", nickname: "AgentAligator",   realName: "Mateus Jorge",      role: "Support",    nationality: "", image: "Rell.jpg" },
+      { id: "s7", nickname: "Zukanoob",        realName: "Hebert Rodrigues",  role: "Support",    nationality: "", image: "tresh.jpg" },
+    ],
   },
   {
     name: "Vipers",
