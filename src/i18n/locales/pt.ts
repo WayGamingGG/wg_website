@@ -319,7 +319,7 @@ const pt = {
     badge: "Apoiar",
     title: "APOIA A WAYGAMING",
     subtitle: "O teu apoio faz a diferença. Ajuda-nos a crescer, a competir ao mais alto nível e a construir uma comunidade cada vez mais forte.",
-    ctaButton: "Apoiar no Patreon",
+    ctaButton: "Associado WG",
     perksTitle: "O QUE OBTENHO AO APOIAR?",
     perks: [
       { title: "Reconhecimento", description: "O teu nome nos créditos da organização e nas nossas redes sociais." },
