@@ -6,7 +6,7 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const NEWS_FILE = path.join(__dirname, 'news.json');
+const NEWS_FILE = process.env.NEWS_FILE || path.join(__dirname, 'news.json');
 
 app.use(cors());
 app.use(express.json());
