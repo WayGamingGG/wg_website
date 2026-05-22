@@ -28,6 +28,7 @@ const en = {
     footerDesc: "We are an esports organization dedicated to competitive excellence and talent development.",
     footerCopyright: "© {{year}} WayGaming. All rights reserved.",
     donations: "Donations",
+    store: "Store",
   },
   splash: {
     subtitle: "Select one of our platforms",

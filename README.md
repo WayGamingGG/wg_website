@@ -1,73 +1,60 @@
-# Welcome to your Lovable project
+# WayGaming eSports — Website
 
-## Project info
+Site oficial da organização portuguesa de esports **WayGaming**, com presença competitiva em League of Legends e Valorant.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Sobre o projeto
 
-## How can I edit this code?
+A WayGaming é uma organização de esports focada na excelência competitiva e no desenvolvimento de talento nacional. Este site é o ponto central de comunicação da organização: apresenta as equipas, jogadores, streamers, notícias, oportunidades de carreira e parceiros oficiais.
 
-There are several ways of editing your application.
+O site inclui ainda integração com a loja oficial de merchandise via UIN Sports e com o parceiro Instant Gaming.
 
-**Use Lovable**
+## Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Zustand (carrinho de compras)
+- TanStack Query (fetching de dados Shopify)
+- react-i18next (PT / EN)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Arquitectura
 
-**Use your preferred IDE**
+- **Routing**: `HashRouter` — todas as rotas são hash-based (`/#/page`), compatível com GitHub Pages.
+- **Estado**: Zustand gere o carrinho com persistência em `localStorage`.
+- **Shopify**: integração via Storefront GraphQL API em `src/lib/shopify.ts`.
+- **i18n**: traduções em `src/i18n/locales/pt.ts` e `src/i18n/locales/en.ts`.
+- **Path alias**: `@/` aponta para `./src/`.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Desenvolvimento local
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requisito: Node.js e npm instalados.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clonar o repositório
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Entrar na pasta do projeto
+cd wg_website
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Instalar dependências
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Iniciar o servidor de desenvolvimento (porta 8080)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Comandos disponíveis
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+npm run dev        # Servidor de desenvolvimento (porta 8080)
+npm run build      # Build de produção (copia dist/index.html → dist/404.html)
+npm run build:dev  # Build em modo desenvolvimento
+npm run lint       # ESLint
+npm run preview    # Pré-visualização do build de produção
+npm run deploy     # Deploy para GitHub Pages via gh-pages
+```
 
-**Use GitHub Codespaces**
+## Deploy
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+O deploy é feito automaticamente para **GitHub Pages** via GitHub Actions (`.github/workflows/static.yml`) a cada push para a branch `main`.

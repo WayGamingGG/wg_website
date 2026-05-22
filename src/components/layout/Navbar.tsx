@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Home } from "lucide-react";
+import { Menu, X, Home, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
@@ -118,8 +118,18 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* Right side: language switcher + back button */}
+          {/* Right side: store button + language switcher + back button */}
           <div className="hidden md:flex items-center gap-3">
+            <a
+              href="https://www.uin-sports.pt/produtos/ps-way-gaming-esports"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 font-body font-semibold uppercase tracking-wider">
+                <ShoppingBag className="w-4 h-4 mr-2" />
+                {t('nav.store')}
+              </Button>
+            </a>
             <LanguageSwitcher />
             <Link to="/">
               <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
@@ -199,7 +209,18 @@ export const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <div className="px-4 pt-4">
+            <div className="px-4 pt-4 flex flex-col gap-2">
+              <a
+                href="https://www.uin-sports.pt/produtos/ps-way-gaming-esports"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-body font-semibold uppercase tracking-wider">
+                  <ShoppingBag className="w-4 h-4 mr-2" />
+                  {t('nav.store')}
+                </Button>
+              </a>
               <Button variant="outline" className="w-full">
                 {t('common.joinUs')}
               </Button>
