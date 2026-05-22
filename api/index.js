@@ -1,27 +1,34 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const fs = require('fs/promises');
-const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const NEWS_FILE = process.env.NEWS_FILE || path.join(__dirname, 'news.json');
+const JSONBIN_ID = process.env.JSONBIN_ID || '6a10b3b2ee5a733b12032dd5';
+const JSONBIN_KEY = process.env.JSONBIN_KEY;
 
 app.use(cors());
 app.use(express.json());
 
 async function readNews() {
-  try {
-    const data = await fs.readFile(NEWS_FILE, 'utf-8');
-    return JSON.parse(data);
-  } catch {
-    return [];
-  }
+  const res = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_ID}/latest`, {
+    headers: { 'X-Master-Key': JSONBIN_KEY },
+  });
+  if (!res.ok) throw new Error(`JSONBin read failed: ${res.status}`);
+  const data = await res.json();
+  return data.record;
 }
 
 async function writeNews(news) {
-  await fs.writeFile(NEWS_FILE, JSON.stringify(news, null, 2));
+  const res = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_ID}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Master-Key': JSONBIN_KEY,
+    },
+    body: JSON.stringify(news),
+  });
+  if (!res.ok) throw new Error(`JSONBin write failed: ${res.status}`);
 }
 
 app.get('/news', async (req, res) => {
@@ -55,6 +62,7 @@ app.post('/news', async (req, res) => {
 
     res.status(201).json(newItem);
   } catch (err) {
+    console.error('[API] Error:', err.message);
     res.status(500).json({ error: 'Failed to save news' });
   }
 });
