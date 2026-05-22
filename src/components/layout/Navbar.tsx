@@ -56,11 +56,11 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-0.5">
             <Link
               to="/about"
               className={cn(
-                "px-4 py-2 font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-md",
+                "px-2.5 py-1.5 font-body text-xs font-semibold uppercase tracking-wide transition-all duration-300 rounded-md whitespace-nowrap",
                 location.pathname === "/about"
                   ? "text-primary text-glow"
                   : "text-muted-foreground hover:text-foreground hover:bg-secondary"
@@ -73,14 +73,14 @@ export const Navbar = () => {
               <DropdownMenuTrigger asChild>
                 <button
                   className={cn(
-                    "flex items-center gap-1 px-4 py-2 font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-md",
+                    "flex items-center gap-0.5 px-2.5 py-1.5 font-body text-xs font-semibold uppercase tracking-wide transition-all duration-300 rounded-md whitespace-nowrap",
                     isEsportsActive
                       ? "text-primary text-glow"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                   )}
                 >
                   {t('nav.esports')}
-                  <ChevronDown className="w-4 h-4" />
+                  <ChevronDown className="w-3 h-3" />
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="bg-card border border-border z-50">
@@ -89,7 +89,7 @@ export const Navbar = () => {
                     <Link
                       to={link.path}
                       className={cn(
-                        "w-full px-4 py-2 font-body text-sm font-semibold uppercase tracking-wider cursor-pointer",
+                        "w-full px-4 py-2 font-body text-sm font-semibold uppercase tracking-wide cursor-pointer",
                         location.pathname === link.path
                           ? "text-primary"
                           : "text-foreground hover:text-primary"
@@ -107,7 +107,7 @@ export const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "px-4 py-2 font-body text-sm font-semibold uppercase tracking-wider transition-all duration-300 rounded-md",
+                  "px-2.5 py-1.5 font-body text-xs font-semibold uppercase tracking-wide transition-all duration-300 rounded-md whitespace-nowrap",
                   location.pathname === link.path
                     ? "text-primary text-glow"
                     : "text-muted-foreground hover:text-foreground hover:bg-secondary"
@@ -125,8 +125,8 @@ export const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 font-body font-semibold uppercase tracking-wider">
-                <ShoppingBag className="w-4 h-4 mr-2" />
+              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 font-body text-xs font-semibold uppercase tracking-wide h-7 px-2.5">
+                <ShoppingBag className="w-3 h-3 mr-1.5" />
                 {t('nav.store')}
               </Button>
             </a>

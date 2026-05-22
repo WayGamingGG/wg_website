@@ -58,3 +58,71 @@ npm run deploy     # Deploy para GitHub Pages via gh-pages
 ## Deploy
 
 O deploy é feito automaticamente para **GitHub Pages** via GitHub Actions (`.github/workflows/static.yml`) a cada push para a branch `main`.
+
+---
+
+## Sistema de Notícias (API + Bot Discord)
+
+A secção de notícias do site pode ser alimentada em tempo real via um bot do Discord.
+
+### Estrutura
+
+```
+/api   — Express API (Node.js) que guarda os últimos 3 anúncios em news.json
+/bot   — Bot Discord que escuta o canal #anuncios-site e publica na API
+```
+
+### Setup
+
+**1. Variáveis de ambiente**
+
+Copia `.env.example` para `.env` e preenche os valores:
+
+```sh
+cp .env.example .env
+```
+
+| Variável | Descrição |
+|---|---|
+| `DISCORD_TOKEN` | Token do bot (Discord Developer Portal) |
+| `CHANNEL_ID` | ID do canal `#anuncios-site` |
+| `API_URL` | URL da API (bot → API), ex: `http://localhost:3001` |
+| `VITE_API_URL` | URL da API (React → API), ex: `http://localhost:3001` |
+
+**2. Instalar dependências dos serviços**
+
+```sh
+cd api && npm install && cd ..
+cd bot && npm install && cd ..
+```
+
+**3. Instalar concurrently (root)**
+
+```sh
+npm install
+```
+
+**4. Iniciar API e Bot em simultâneo**
+
+```sh
+npm run services
+```
+
+Ou separadamente:
+
+```sh
+npm run api   # API na porta 3001
+npm run bot   # Bot Discord
+```
+
+### Uso no Discord
+
+No canal `#anuncios-site`, escreve:
+
+```
+!news Título do anúncio | Conteúdo do anúncio
+```
+
+Podes anexar uma imagem à mensagem — ela será exibida no card do site.
+
+O site atualiza automaticamente a cada 60 segundos. Enquanto a API não tiver anúncios, são exibidos os itens estáticos de fallback.

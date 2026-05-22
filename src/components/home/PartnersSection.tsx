@@ -46,11 +46,13 @@ export const PartnersSection = () => {
             href="https://www.uin-sports.pt/produtos/ps-way-gaming-esports"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-64 h-24 rounded-lg border border-border bg-secondary/40 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-primary/50 hover:bg-secondary/70 px-6"
+            className="flex items-center justify-center w-64 h-30 rounded-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:opacity-80"
           >
-            <span className="font-display text-2xl font-bold tracking-widest text-foreground">
-              UIN<span className="text-primary"> SPORTS</span>
-            </span>
+            <img
+              src="/uinsports.png"
+              alt="UIN Sports"
+              className="w-full h-full object-contain"
+            />
           </a>
         </div>
       </div>
