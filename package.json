@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postbuild": "cp dist/index.html dist/404.html",
+    "postbuild": "cp dist/index.html dist/404.html && touch dist/.nojekyll",
     "deploy": "gh-pages -d dist",
     "api": "node api/index.js",
     "bot": "node bot/index.js",
